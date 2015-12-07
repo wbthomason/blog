@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "hidden markov models in OCaml"
-date: 2015-11-22T02:05:21-05:00
+date: 2015-12-08T02:05:21-05:00
 ---
 
 In this thrilling installment of *something bloglike*, we're going to learn
