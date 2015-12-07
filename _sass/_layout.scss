@@ -32,6 +32,17 @@
     }
 }
 
+.trigger {
+  display: table;
+  justify-content: space-between;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  > a {
+    display: inline;
+  }
+}
+
 .about-portrait {
   float: right;
   display: block;
@@ -47,6 +58,8 @@
 }
 
 .site-nav {
+    padding-top: 10px;
+    width: 100%;
     float: right;
     line-height: 56px;
 
