@@ -2,6 +2,7 @@
 layout: post
 title: "hidden markov models in OCaml"
 date: 2015-12-08T02:05:21-05:00
+link-citations: true
 ---
 
 In this thrilling installment of *something bloglike*, we're going to learn
@@ -14,7 +15,11 @@ need any preexisting knowledge (other than familiarity with OCaml) to get the
 gist of the tutorial. That said, a basic grounding in probability may help you
 grasp the concepts more easily.
 
-<!--more-->
+<!-- more -->
+
+$$x^y+2=4$$
+
+See [@martini_several_2015] for more info
 
 
 # overview
@@ -35,6 +40,7 @@ models, of which there are a fair few.
 
 # final words
 
+# bibliography
 
 [^1]: This shouldn't be so hard to do.
 
