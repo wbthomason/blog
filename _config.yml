@@ -25,7 +25,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: downloads/code
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -71,24 +71,6 @@ deploy:
   type: git
   repo: git@github.com:wbthomason/blog
   branch: gh-pages
-
-# Markdown-it
-#markdown:
-#  render:
-#    html: true
-#    typographer: true
-#    quotes: '“”‘’'
-#  anchors:
-#    level: 1
-#    collisionSuffix: 'n'           
-#    permalink: false              
-#    permalinkClass: header-anchor 
-#    permalinkSymbol: ¶
-#  plugins:
-#    - markdown-it-footnote
-#    - markdown-it-sub
-#    - markdown-it-sup
-#    - markdown-it-abbr
 
 # Pandoc
 pandoc:
