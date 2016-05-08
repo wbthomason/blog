@@ -78,7 +78,7 @@ var Footnotes = {
     return(agent.indexOf('android') >= 0);
   },
   initTooltip: function() {
-    var targets = $('.footnote');
+    var targets = $('.footnote-ref');
     
     // Load Tooltip CSS
     $('body').append('<style>' + cssTooltip + '</style>');
@@ -94,11 +94,12 @@ var Footnotes = {
     $('#tooltip').remove();
     
     // Find matching footnote text and remove extraneous tags
-    var target = $(this);
+    var target = $(this).children("a");
     var id = target.attr('href').substr(1);
     var fn = document.getElementById(id);
     var tip = $(fn).html();
-    tip = tip.replace(/<p>(.+)<a href="#fnref.+<\/a><\/p>/, "$1");
+    tip = tip.replace(/<a rel="footnote" "href="#fn:.+<\/a>/, "$1");
+    tip = tip.replace(/<a class="footnote-return".+<\/a>/, "");
     if( !tip || tip == '' ) return false;
     
     // Create Tooltip

@@ -418,6 +418,7 @@ a.sidebar-nav-item:focus {
 .post-summary {
   float: left;
   clear: both;
+  width: 100%;
 }
 
 .post-content {
