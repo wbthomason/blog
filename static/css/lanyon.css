@@ -405,6 +405,12 @@ a.sidebar-nav-item:focus {
   margin-top: 0;
 }
 
+.post-title {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
 /* Meta data line below post title */
 .post-date {
   color: #9a9a9a;
@@ -659,3 +665,31 @@ a.pagination-item:hover {
 vertical-align: middle; }
 .icon > svg path {
 fill: #828282; }
+
+.read-more-link {
+  display: block;
+  text-align: center;
+  font-family: Raleway, "Fjalla One", "Avenir Next", Avenir, Tahoma, Vendana, sans-serif;
+  margin-top: 50px;
+}
+
+.read-more-link > a {
+
+  display: inline-block;
+  padding: 0 20px;
+  font-size: 15px;
+  color: #fff;
+  background: #222;
+  border: 2px solid #222;
+  text-decoration: none;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+
+.read-more-link > a:hover {
+  border-color: #222;
+  color: #222;
+  background: #fff;
+}
