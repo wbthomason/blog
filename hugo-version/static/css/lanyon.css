@@ -390,7 +390,8 @@ a.sidebar-nav-item:focus {
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 2em;
+  clear: both;
 }
 
 /* Blog post or page title */
@@ -407,17 +408,16 @@ a.sidebar-nav-item:focus {
 /* Meta data line below post title */
 .post-date {
   color: #9a9a9a;
-  float: left;
+  display: inline-block;
 }
 
 .reading-time {
   color: #9a9a9a;
+  display: inline-block;
   float: right;
 }
 
 .post-summary {
-  float: left;
-  clear: both;
   width: 100%;
 }
 
@@ -428,6 +428,8 @@ a.sidebar-nav-item:focus {
 
 .metadata {
   width: 100%;
+  float: left;
+  clear: both;
 }
 
 /* Related posts */
