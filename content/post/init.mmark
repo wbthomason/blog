@@ -1,0 +1,39 @@
+---
+date: 2016-07-07T00:26:46-04:00
+draft: false
+title: init
+tags:
+  - setup
+  - hugo
+  - mmark
+  - practices
+categories:
+  - Practices
+  - Webdev
+  - Blogging
+  - Markdown
+link-citations: true
+---
+
+I'm really bad about actually using my blog. I've set it up with at least half a
+dozen times, with about three different frameworks, several themes, and once or
+twice just because I broke something and it was easier to start over than to fix
+things. I've had the site up and running for at least three years at this point,
+but have yet to publish a single completed post at the time of this
+writing.[^partial] I believe that writing regularly is important and beneficial,
+particularly for someone in academia.[^hypocrite] As such, and because it's
+about the easiest possible topic for an initial post, this brief post will
+detail the process I've taken to arrive at the current form of my blog, and what
+I intend to do from here.
+
+[^partial]: I did have most of an overview of classical AI written at some point, but deemed finishing the article to be largely pointless.
+[^hypocrite]: In fact, I have the outline of a post about this loitering in some forsaken draft folder somewhere. Once it wouldn't be hypocritical for me to post it &mdash; i.e. once I actually write regularly &mdash; I intend to flesh it out and publish it.
+
+<!--more-->
+
+I've intended to start things off in several ways over this time &mdash; plans for
+posts on programming language design, probabilistic models, and various topics
+in mathematics have all been in the works at one time or another. If any of
+those had survived the various rewrites I've put the blog through, they might be
+very well-suited to kickstarting a regular series of informative and interesting
+posts. Alas, none did, and so this meager beginning will need to suffice.
