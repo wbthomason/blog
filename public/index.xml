@@ -64,41 +64,5 @@ posts. Alas, none did, and so this meager beginning will need to suffice.&lt;/p&
       <description></description>
     </item>
     
-    <item>
-      <title>foobar</title>
-      <link>http://wbthomason.co/blog/post/foobar/</link>
-      <pubDate>Fri, 06 May 2016 00:36:14 -0400</pubDate>
-      
-      <guid>http://wbthomason.co/blog/post/foobar/</guid>
-      <description>&lt;p&gt;Hello yes this is text&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[T=4^x\sin(\Theta)\]&lt;/span&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;// And some code
-int x = 4;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But: What about&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:testnote&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:testnote&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; this?&lt;/p&gt;
-
-&lt;h1 id=&#34;hello&#34;&gt;Hello&lt;/h1&gt;
-
-&lt;h2 id=&#34;another&#34;&gt;ANOTHER&lt;/h2&gt;
-
-&lt;h3 id=&#34;foooo&#34;&gt;FOOOO&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;let rec foo (bar: int) : Baz = bar + 6
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:testnote&#34;&gt;Hello there
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:testnote&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
   </channel>
 </rss>
