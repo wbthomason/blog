@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>something bloglike </title>
-    <link>http://wbthomason.co/blog/</link>
+    <link>http://wbthomason.co/blog/categories/webdev/</link>
     <language>en-us</language>
     <author></author>
     <rights>(C) 2016</rights>
@@ -46,10 +46,6 @@ posts. Alas, none did, and so this meager beginning will need to suffice.&lt;/p&
 &lt;/div&gt;
 </description>
         </item>
-      
-    
-      
-    
       
     
 
