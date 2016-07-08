@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fixeds on something bloglike</title>
-    <link>http://wbthomason.co/fixed/</link>
+    <link>http://wbthomason.co/blog/fixed/</link>
     <description>Recent content in Fixeds on something bloglike</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 06 May 2016 00:38:35 -0400</lastBuildDate>
-    <atom:link href="http://wbthomason.co/fixed/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://wbthomason.co/blog/fixed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>tags</title>
-      <link>http://wbthomason.co/fixed/tags/</link>
+      <link>http://wbthomason.co/blog/fixed/tags/</link>
       <pubDate>Fri, 06 May 2016 00:38:35 -0400</pubDate>
       
-      <guid>http://wbthomason.co/fixed/tags/</guid>
+      <guid>http://wbthomason.co/blog/fixed/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>archives</title>
-      <link>http://wbthomason.co/fixed/archives/</link>
+      <link>http://wbthomason.co/blog/fixed/archives/</link>
       <pubDate>Fri, 06 May 2016 00:38:27 -0400</pubDate>
       
-      <guid>http://wbthomason.co/fixed/archives/</guid>
+      <guid>http://wbthomason.co/blog/fixed/archives/</guid>
       <description></description>
     </item>
     

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>something bloglike</title>
-    <link>http://wbthomason.co/</link>
+    <link>http://wbthomason.co/blog/</link>
     <description>Recent content on something bloglike</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Jul 2016 00:26:46 -0400</lastBuildDate>
-    <atom:link href="http://wbthomason.co/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://wbthomason.co/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>init</title>
-      <link>http://wbthomason.co/post/init/</link>
+      <link>http://wbthomason.co/blog/post/init/</link>
       <pubDate>Thu, 07 Jul 2016 00:26:46 -0400</pubDate>
       
-      <guid>http://wbthomason.co/post/init/</guid>
+      <guid>http://wbthomason.co/blog/post/init/</guid>
       <description>&lt;p&gt;I&#39;m really bad about actually using my blog. I&#39;ve set it up with at least half a
 dozen times, with about three different frameworks, several themes, and once or
 twice just because I broke something and it was easier to start over than to fix
@@ -48,20 +48,56 @@ posts. Alas, none did, and so this meager beginning will need to suffice.&lt;/p&
     
     <item>
       <title>tags</title>
-      <link>http://wbthomason.co/fixed/tags/</link>
+      <link>http://wbthomason.co/blog/fixed/tags/</link>
       <pubDate>Fri, 06 May 2016 00:38:35 -0400</pubDate>
       
-      <guid>http://wbthomason.co/fixed/tags/</guid>
+      <guid>http://wbthomason.co/blog/fixed/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>archives</title>
-      <link>http://wbthomason.co/fixed/archives/</link>
+      <link>http://wbthomason.co/blog/fixed/archives/</link>
       <pubDate>Fri, 06 May 2016 00:38:27 -0400</pubDate>
       
-      <guid>http://wbthomason.co/fixed/archives/</guid>
+      <guid>http://wbthomason.co/blog/fixed/archives/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>foobar</title>
+      <link>http://wbthomason.co/blog/post/foobar/</link>
+      <pubDate>Fri, 06 May 2016 00:36:14 -0400</pubDate>
+      
+      <guid>http://wbthomason.co/blog/post/foobar/</guid>
+      <description>&lt;p&gt;Hello yes this is text&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[T=4^x\sin(\Theta)\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// And some code
+int x = 4;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But: What about&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:testnote&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:testnote&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; this?&lt;/p&gt;
+
+&lt;h1 id=&#34;hello&#34;&gt;Hello&lt;/h1&gt;
+
+&lt;h2 id=&#34;another&#34;&gt;ANOTHER&lt;/h2&gt;
+
+&lt;h3 id=&#34;foooo&#34;&gt;FOOOO&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;let rec foo (bar: int) : Baz = bar + 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:testnote&#34;&gt;Hello there
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:testnote&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
     </item>
     
   </channel>
