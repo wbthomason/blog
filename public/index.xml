@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>something bloglike</title>
-    <link>http://wbthomason.github.io/blog/</link>
+    <link>https://wbthomason.github.io/blog/</link>
     <description>Recent content on something bloglike</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Jul 2016 00:26:46 -0400</lastBuildDate>
-    <atom:link href="http://wbthomason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://wbthomason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>init</title>
-      <link>http://wbthomason.github.io/blog/post/init/</link>
+      <link>https://wbthomason.github.io/blog/post/init/</link>
       <pubDate>Thu, 07 Jul 2016 00:26:46 -0400</pubDate>
       
-      <guid>http://wbthomason.github.io/blog/post/init/</guid>
+      <guid>https://wbthomason.github.io/blog/post/init/</guid>
       <description>&lt;p&gt;I&#39;m really bad about actually using my blog. I&#39;ve set it up with at least half a
 dozen times, with about three different frameworks, several themes, and once or
 twice just because I broke something and it was easier to start over than to fix
@@ -48,19 +48,19 @@ posts. Alas, none did, and so this meager beginning will need to suffice.&lt;/p&
     
     <item>
       <title>tags</title>
-      <link>http://wbthomason.github.io/blog/fixed/tags/</link>
+      <link>https://wbthomason.github.io/blog/fixed/tags/</link>
       <pubDate>Fri, 06 May 2016 00:38:35 -0400</pubDate>
       
-      <guid>http://wbthomason.github.io/blog/fixed/tags/</guid>
+      <guid>https://wbthomason.github.io/blog/fixed/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>archives</title>
-      <link>http://wbthomason.github.io/blog/fixed/archives/</link>
+      <link>https://wbthomason.github.io/blog/fixed/archives/</link>
       <pubDate>Fri, 06 May 2016 00:38:27 -0400</pubDate>
       
-      <guid>http://wbthomason.github.io/blog/fixed/archives/</guid>
+      <guid>https://wbthomason.github.io/blog/fixed/archives/</guid>
       <description></description>
     </item>
     
