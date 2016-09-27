@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>something bloglike </title>
-    <link>http://wbthomason.co/blog/fixed/</link>
+    <title>Fixeds on something bloglike</title>
+    <link>http://wbthomason.github.io/blog/fixed/</link>
+    <description>Recent content in Fixeds on something bloglike</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author></author>
-    <rights>(C) 2016</rights>
-    <updated>2016-05-06 00:38:35 -0400 EDT</updated>
-
+    <lastBuildDate>Fri, 06 May 2016 00:38:35 -0400</lastBuildDate>
+    <atom:link href="http://wbthomason.github.io/blog/fixed/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>tags</title>
+      <link>http://wbthomason.github.io/blog/fixed/tags/</link>
+      <pubDate>Fri, 06 May 2016 00:38:35 -0400</pubDate>
       
+      <guid>http://wbthomason.github.io/blog/fixed/tags/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>archives</title>
+      <link>http://wbthomason.github.io/blog/fixed/archives/</link>
+      <pubDate>Fri, 06 May 2016 00:38:27 -0400</pubDate>
       
+      <guid>http://wbthomason.github.io/blog/fixed/archives/</guid>
+      <description></description>
+    </item>
     
-
   </channel>
 </rss>

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>something bloglike </title>
-    <link>http://wbthomason.co/blog/tags/practices/</link>
+    <title>Practices on something bloglike</title>
+    <link>http://wbthomason.github.io/blog/tags/practices/</link>
+    <description>Recent content in Practices on something bloglike</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author></author>
-    <rights>(C) 2016</rights>
-    <updated>2016-07-07 00:26:46 -0400 EDT</updated>
-
+    <lastBuildDate>Thu, 07 Jul 2016 00:26:46 -0400</lastBuildDate>
+    <atom:link href="http://wbthomason.github.io/blog/tags/practices/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>init</title>
+      <link>http://wbthomason.github.io/blog/post/init/</link>
+      <pubDate>Thu, 07 Jul 2016 00:26:46 -0400</pubDate>
       
-        <item>
-          <title>init</title>
-          <link>http://wbthomason.co/blog/post/init/</link>
-          <pubDate>Thu, 07 Jul 2016 00:26:46 EDT</pubDate>
-          <author></author>
-          <guid>http://wbthomason.co/blog/post/init/</guid>
-          <description>&lt;p&gt;I&#39;m really bad about actually using my blog. I&#39;ve set it up with at least half a
+      <guid>http://wbthomason.github.io/blog/post/init/</guid>
+      <description>&lt;p&gt;I&#39;m really bad about actually using my blog. I&#39;ve set it up with at least half a
 dozen times, with about three different frameworks, several themes, and once or
 twice just because I broke something and it was easier to start over than to fix
 things. I&#39;ve had the site up and running for at least three years at this point,
@@ -45,9 +44,7 @@ posts. Alas, none did, and so this meager beginning will need to suffice.&lt;/p&
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
-        </item>
-      
+    </item>
     
-
   </channel>
 </rss>
