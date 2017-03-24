@@ -1,15 +1,15 @@
 baseurl = "https://wbthomason.github.io/blog/"
 languageCode = "en-us"
 title = "something bloglike"
-tagline = "foobar"
+tagline = ""
 theme = "lanyon"
 MetaDataFormat = "yaml"
 googleAnalytics = "UA-75724004-1"
 
 [params]
   author = "Wil Thomason"
-  title = "wil thomason"
-  tagline = "foobar"
+  title = "something bloglike"
+  tagline = ""
   Github = "wbthomason"
   Twitter = "wilthomason"
   Linkedin = "wbthomason"
