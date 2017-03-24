@@ -2,13 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wbthomason.github.io/blog/</loc>
-    <lastmod>2016-07-07T00:26:46-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wbthomason.github.io/blog/post/init/</loc>
-    <lastmod>2016-07-07T00:26:46-04:00</lastmod>
+    <loc>https://wbthomason.github.io/blog/post/academic-vim/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
   </url>
   
   <url>
@@ -19,6 +14,76 @@
   <url>
     <loc>https://wbthomason.github.io/blog/fixed/archives/</loc>
     <lastmod>2016-05-06T00:38:27-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/tags/configuration/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/fixed/</loc>
+    <lastmod>2016-05-06T00:38:35-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/post/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/tags/practices/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/categories/practices/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/categories/tooling/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/tags/vim/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/tags/writing/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/categories/writing/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wbthomason.github.io/blog/</loc>
+    <lastmod>2017-03-22T00:05:36-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

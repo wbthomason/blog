@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fixeds on something bloglike</title>
-    <link>https://wbthomason.github.io/blog/fixed/</link>
+    <link>https://wbthomason.github.io/blog/fixed/index.xml</link>
     <description>Recent content in Fixeds on something bloglike</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>

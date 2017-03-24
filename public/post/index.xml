@@ -2,48 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on something bloglike</title>
-    <link>https://wbthomason.github.io/blog/post/</link>
+    <link>https://wbthomason.github.io/blog/post/index.xml</link>
     <description>Recent content in Posts on something bloglike</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 Jul 2016 00:26:46 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 22 Mar 2017 00:05:36 -0400</lastBuildDate>
     <atom:link href="https://wbthomason.github.io/blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>init</title>
-      <link>https://wbthomason.github.io/blog/post/init/</link>
-      <pubDate>Thu, 07 Jul 2016 00:26:46 -0400</pubDate>
+      <title>Using Vim for Academic Writing</title>
+      <link>https://wbthomason.github.io/blog/post/academic-vim/</link>
+      <pubDate>Wed, 22 Mar 2017 00:05:36 -0400</pubDate>
       
-      <guid>https://wbthomason.github.io/blog/post/init/</guid>
-      <description>&lt;p&gt;I&#39;m really bad about actually using my blog. I&#39;ve set it up with at least half a
-dozen times, with about three different frameworks, several themes, and once or
-twice just because I broke something and it was easier to start over than to fix
-things. I&#39;ve had the site up and running for at least three years at this point,
-but have yet to publish a single completed post at the time of this
-writing.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:partial&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:partial&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; I believe that writing regularly is important and beneficial,
-particularly for someone in academia.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:hypocrite&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:hypocrite&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; As such, and because it&#39;s
-about the easiest possible topic for an initial post, this brief post will
-detail the process I&#39;ve taken to arrive at the current form of my blog, and what
-I intend to do from here.&lt;/p&gt;
+      <guid>https://wbthomason.github.io/blog/post/academic-vim/</guid>
+      <description>&lt;p&gt;Writing is one of the most important activities for an academic. An academic&amp;rsquo;s job is to create and
+disseminate knowledge, and this cannot be done without effective writing. Thus, it is important to
+pick the right tools for the job. These tools can be roughly split into the categories of
+&lt;a href=&#34;#vim&#34;&gt;editor&lt;/a&gt;, &lt;a href=&#34;#pandoc-and-latex&#34;&gt;typesetting language&lt;/a&gt;, and &lt;a href=&#34;#plugins&#34;&gt;support tools&lt;/a&gt;. In this
+post, I explain my academic writing workflow using Neovim, Pandoc and LaTeX, and a curated set of
+plugins to assist with various writing tasks.&lt;/p&gt;
 
-&lt;p&gt;I&#39;ve intended to start things off in several ways over this time &amp;mdash; plans for
-posts on programming language design, probabilistic models, and various topics
-in mathematics have all been in the works at one time or another. If any of
-those had survived the various rewrites I&#39;ve put the blog through, they might be
-very well-suited to kickstarting a regular series of informative and interesting
-posts. Alas, none did, and so this meager beginning will need to suffice.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;vim&#34;&gt;Writing with Neovim&lt;/h1&gt;
+
+&lt;p&gt;In the programmer community, the &amp;ldquo;Emacs or Vim&amp;rdquo; debate is an unending flame war. I have no intent of
+entering this debate&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vim&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:vim&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. You should use whatever editor works for you; Vim (specifically
+&lt;a href=&#34;https://neovim.io&#34;&gt;Neovim&lt;/a&gt;) works for me. However &amp;mdash; particularly in computer science &amp;mdash; there
+seems to be a bias toward Emacs, so I&amp;rsquo;ll spend a bit of time explaining my preference.&lt;/p&gt;
+
+&lt;p&gt;I will note that for more formal academic writing (mostly in fields other than computer science),
+many people like something more along the lines of Microsoft Word or a specialized LaTeX editor.
+There are good reasons to use these programs, but using Vim&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:editors&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:editors&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; is often the better choice.
+Work in computer science and other STEM fields involves writing in a blend of formats &amp;mdash; coding in
+various languages, writing formal papers with formulae, graphics, and ordinary text, and (for some
+of us) making detailed research notes for planning. Given this diversity of formats, there&amp;rsquo;s a
+benefit to using the same editor for them all, if that editor can adequately support them.
+Fortunately, Vim, Emacs, and most other common programming editors have excellent support for all of
+the formats an academic will regularly need to use.&lt;/p&gt;
+
+&lt;p&gt;Assuming that you buy my argument for using a programming editor instead of Word, I still need to
+argue for my choice of Vim in particular. It is my experience that while Vim has a much higher
+learning curve than Emacs, Sublime Text, etc., the investment of time in learning Vim&amp;rsquo;s modal
+editing language pays dividends. Other editors provide their own means of rapidly changing and
+navigating text; I find Vim&amp;rsquo;s language of modifiers and movement operators to be the most expressive
+and flexible to use. It&amp;rsquo;s worth noting that most text editors have decent plugins for emulating
+Vim&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:spacemacs&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:spacemacs&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;; if you already use another editor and want to try Vim&amp;rsquo;s editing paradigm, these can
+be a good option.&lt;/p&gt;
+
+&lt;p&gt;Finally, I favor Vim over Emacs for its plugin ecosystem, ease of use in the terminal&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:terminal&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:terminal&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;,
+and speed. Vim&amp;rsquo;s customization language (Vimscript) is admittedly horrible compared to Emacs Lisp,
+but Neovim fixes some of this deficiency through its remote plugin API. Given that Neovim also adds
+an asynchronous job API&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vim8&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:vim8&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;, cleans up the Vim source code, and offers greater future
+maintainability with no regressions from Vim&amp;rsquo;s functionality, it is the best choice of Vim-family
+editors.&lt;/p&gt;
+
+&lt;h1 id=&#34;pandoc-and-latex&#34;&gt;Pandoc Markdown and LaTeX&lt;/h1&gt;
+
+&lt;p&gt;foo&lt;/p&gt;
+
+&lt;h1 id=&#34;plugins&#34;&gt;Support Tools&lt;/h1&gt;
+
+&lt;p&gt;bar&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:partial&#34;&gt;I did have most of an overview of classical AI written at some point, but deemed finishing the article to be largely pointless.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:partial&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:hypocrite&#34;&gt;In fact, I have the outline of a post about this loitering in some forsaken draft folder somewhere. Once it wouldn&#39;t be hypocritical for me to post it &amp;mdash; i.e. once I actually write regularly &amp;mdash; I intend to flesh it out and publish it.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:hypocrite&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:vim&#34;&gt;Though Vim is definitely better&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:jokes&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:jokes&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:vim&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:editors&#34;&gt;Or another general purpose editor.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:editors&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:spacemacs&#34;&gt;&lt;a href=&#34;https://spacemacs.org&#34;&gt;Spacemacs&lt;/a&gt; is a particularly good option.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:spacemacs&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:terminal&#34;&gt;Which probably only matters if you are a computer scientist.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:terminal&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:vim8&#34;&gt;Vim 8 also added an asynchronous job API.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:vim8&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:jokes&#34;&gt;Kidding, kidding. Any Emacs fans in the audience can put down their parenthetical pitchforks.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:jokes&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-</description>
+&lt;/div&gt;</description>
     </item>
     
   </channel>
