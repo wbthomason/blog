@@ -167,7 +167,7 @@ Work in computer science and other STEM fields involves writing in a blend of fo
 various languages, writing formal papers with formulae, graphics, and ordinary text, and (for some
 of us) making detailed research notes for planning. Given this diversity of formats, there&rsquo;s a
 benefit to using the same editor for them all, if that editor can adequately support them.
-Fortunately, Vim, Emacs, and most other common programming editors have excellent support for all of
+Fortunately, Vim, Emacs, and most other common programming editors have excellent support for all
 the formats an academic will regularly need to use.</p>
 
 <p>Assuming that you buy my argument for using a programming editor instead of Word, I still need to
@@ -180,7 +180,7 @@ Vim<sup class="footnote-ref" id="fnref:spacemacs"><a rel="footnote" href="#fn:sp
 be a good option.</p>
 
 <p>Finally, I favor Vim over Emacs for its plugin ecosystem, ease of use in the terminal<sup class="footnote-ref" id="fnref:terminal"><a rel="footnote" href="#fn:terminal">4</a></sup>,
-and speed. Vim&rsquo;s customization language (Vimscript) is admittedly horrible compared to Emacs Lisp,
+and speed. Vim&rsquo;s customization language (Vim script) is admittedly horrible compared to Emacs Lisp,
 but Neovim fixes some of this deficiency through its remote plugin API. Given that Neovim also adds
 an asynchronous job API<sup class="footnote-ref" id="fnref:vim8"><a rel="footnote" href="#fn:vim8">5</a></sup>, cleans up the Vim source code, and offers greater future
 maintainability with no regressions from Vim&rsquo;s functionality, it is the best choice of Vim-family
@@ -198,7 +198,7 @@ some background on both and explain why I have this preference.</p>
 formats to an even larger number of output formats. It can take in Markdown, Emacs Org-Mode syntax,
 Microsoft Word files, and several other formats<sup class="footnote-ref" id="fnref:formats"><a rel="footnote" href="#fn:formats">7</a></sup>, and output PDFs, LaTeX, HTML, and much
 more. In typical use, you write in Pandoc Markdown &mdash; ordinary Markdown<sup class="footnote-ref" id="fnref:markdown"><a rel="footnote" href="#fn:markdown">8</a></sup> extended with
-some useful features (including footnotes, tables, defintion lists, embedded math, etc.) &mdash; and
+some useful features (including footnotes, tables, definition lists, embedded math, etc.) &mdash; and
 output whatever format you need. Pandoc is great for academic writing because it allows you to
 easily make professional-looking documents with figures, tables, automatically-processed citations,
 and math. Further, because Pandoc can convert to so many output formats, it&rsquo;s trivial to write your
@@ -235,7 +235,7 @@ could want for the remaining 20%.</p>
 <p>The final piece pulling together the elements of my academic writing setup is a curated set of
 writing plugins for Neovim. These fall loosely into three categories: <a href="#lang-plugins">language
 plugins</a>, <a href="#focus-plugins">focus plugins</a>, and <a href="#edit-plugins">editing plugins</a>. I do
-use a large number of plugins other than these; you can see the full set in my <a href="https://github.com/wbthomason/.dotfiles">dotfiles
+use many plugins other than these; you can see the full set in my <a href="https://github.com/wbthomason/.dotfiles">dotfiles
 repo</a>.</p>
 
 <h3 id="lang-plugins">Language Plugins</h3>
@@ -248,7 +248,8 @@ plugins have to offer.</p>
 
 <ul>
 <li><a href="https://github.com/vim-pandoc/vim-pandoc">vim-pandoc</a>: Adds a number of integrations between Vim
-and Pandoc - the ones I rely on are autocompletion of bibliography entries and correct handling of
+and Pandoc - the ones I rely on are auto-completion of bibliography entries and correct handling
+of
 hard and soft line wraps.</li>
 <li><a href="https://github.com/vim-pandoc/vim-pandoc-syntax">vim-pandoc-syntax</a>: Provides syntax highlighting
 for Pandoc Markdown files. In particular, it also integrates with Vim&rsquo;s <code>conceal</code> feature, which
@@ -278,9 +279,9 @@ two focus plugins I use help to eliminate these distractions and let you pay att
 writing at hand.</p>
 
 <p>The first of these focus plugins is <a href="https://github.com/junegunn/goyo.vim">goyo.vim</a>. <code>goyo</code>
-essentially hides all of the unnecessary parts of the editor while you&rsquo;re writing: Line numbers,
-status displays, etc. It focuses the text in the center of the screen. While this functionality
-sounds simple, it&rsquo;s surprisingly nice for writing.</p>
+essentially hides all the unnecessary parts of the editor while you&rsquo;re writing: Line numbers, status
+displays, etc. It focuses the text in the center of the screen. While this functionality sounds
+simple, it&rsquo;s surprisingly nice for writing.</p>
 
 <p>My second focus plugin is <a href="https://github.com/junegunn/limelight.vim">limelight.vim</a>. <code>limelight</code>
 works very well with <code>goyo</code>, as it brightens the color of the current paragraph of text, and dims
@@ -295,7 +296,8 @@ and style issues.</p>
 
 <p>For the first of these issues, I use <a href="https://github.com/rhysd/vim-grammarous">vim-grammarous</a>.
 <code>vim-grammarous</code>, as the name implies, checks your writing for grammar errors using
-<a href="https://www.languagetool.org/">LanguageTool</a>. It&rsquo;s as simple as that, but very useful.</p>
+<a href="https://www.languagetool.org/">LanguageTool</a>. It can also use the suggested fixes from
+<code>LanguageTool</code> to automatically edit your writing. It&rsquo;s as simple as that, but very useful.</p>
 
 <p><a href="https://github.com/dbmrq/vim-ditto">vim-ditto</a> helps to avoid using the same words ad nauseam in
 your writing<sup class="footnote-ref" id="fnref:ditto-pandoc"><a rel="footnote" href="#fn:ditto-pandoc">13</a></sup>. If it detects that you&rsquo;ve used the same word too many times too close
@@ -334,7 +336,7 @@ highlight areas in need of special editing attention.</p>
  <a class="footnote-return" href="#fnref:latex-cite"><sup>[return]</sup></a></li>
 <li id="fn:sharelatex">For example, <a href="https://www.sharelatex.com/learn">these</a>.
  <a class="footnote-return" href="#fnref:sharelatex"><sup>[return]</sup></a></li>
-<li id="fn:unite-bibtex">If you&rsquo;re a Unite or Denite user, then <a href="https://github.com/msprev/unite-bibtex">unite-bibtex</a> is a good thing to have.
+<li id="fn:unite-bibtex">If you&rsquo;re an Unite or Denite user, then <a href="https://github.com/msprev/unite-bibtex">unite-bibtex</a> is a good thing to have.
  <a class="footnote-return" href="#fnref:unite-bibtex"><sup>[return]</sup></a></li>
 <li id="fn:self-promo">Warning: Shameless self-promotion here.
  <a class="footnote-return" href="#fnref:self-promo"><sup>[return]</sup></a></li>

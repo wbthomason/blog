@@ -41,7 +41,7 @@ Work in computer science and other STEM fields involves writing in a blend of fo
 various languages, writing formal papers with formulae, graphics, and ordinary text, and (for some
 of us) making detailed research notes for planning. Given this diversity of formats, there&amp;rsquo;s a
 benefit to using the same editor for them all, if that editor can adequately support them.
-Fortunately, Vim, Emacs, and most other common programming editors have excellent support for all of
+Fortunately, Vim, Emacs, and most other common programming editors have excellent support for all
 the formats an academic will regularly need to use.&lt;/p&gt;
 
 &lt;p&gt;Assuming that you buy my argument for using a programming editor instead of Word, I still need to
@@ -54,7 +54,7 @@ Vim&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:spacemacs&#34;&gt;&lt;a re
 be a good option.&lt;/p&gt;
 
 &lt;p&gt;Finally, I favor Vim over Emacs for its plugin ecosystem, ease of use in the terminal&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:terminal&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:terminal&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;,
-and speed. Vim&amp;rsquo;s customization language (Vimscript) is admittedly horrible compared to Emacs Lisp,
+and speed. Vim&amp;rsquo;s customization language (Vim script) is admittedly horrible compared to Emacs Lisp,
 but Neovim fixes some of this deficiency through its remote plugin API. Given that Neovim also adds
 an asynchronous job API&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vim8&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:vim8&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;, cleans up the Vim source code, and offers greater future
 maintainability with no regressions from Vim&amp;rsquo;s functionality, it is the best choice of Vim-family
@@ -72,7 +72,7 @@ some background on both and explain why I have this preference.&lt;/p&gt;
 formats to an even larger number of output formats. It can take in Markdown, Emacs Org-Mode syntax,
 Microsoft Word files, and several other formats&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:formats&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:formats&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;, and output PDFs, LaTeX, HTML, and much
 more. In typical use, you write in Pandoc Markdown &amp;mdash; ordinary Markdown&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:markdown&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:markdown&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; extended with
-some useful features (including footnotes, tables, defintion lists, embedded math, etc.) &amp;mdash; and
+some useful features (including footnotes, tables, definition lists, embedded math, etc.) &amp;mdash; and
 output whatever format you need. Pandoc is great for academic writing because it allows you to
 easily make professional-looking documents with figures, tables, automatically-processed citations,
 and math. Further, because Pandoc can convert to so many output formats, it&amp;rsquo;s trivial to write your
@@ -109,7 +109,7 @@ could want for the remaining 20%.&lt;/p&gt;
 &lt;p&gt;The final piece pulling together the elements of my academic writing setup is a curated set of
 writing plugins for Neovim. These fall loosely into three categories: &lt;a href=&#34;#lang-plugins&#34;&gt;language
 plugins&lt;/a&gt;, &lt;a href=&#34;#focus-plugins&#34;&gt;focus plugins&lt;/a&gt;, and &lt;a href=&#34;#edit-plugins&#34;&gt;editing plugins&lt;/a&gt;. I do
-use a large number of plugins other than these; you can see the full set in my &lt;a href=&#34;https://github.com/wbthomason/.dotfiles&#34;&gt;dotfiles
+use many plugins other than these; you can see the full set in my &lt;a href=&#34;https://github.com/wbthomason/.dotfiles&#34;&gt;dotfiles
 repo&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&#34;lang-plugins&#34;&gt;Language Plugins&lt;/h3&gt;
@@ -122,7 +122,8 @@ plugins have to offer.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/vim-pandoc/vim-pandoc&#34;&gt;vim-pandoc&lt;/a&gt;: Adds a number of integrations between Vim
-and Pandoc - the ones I rely on are autocompletion of bibliography entries and correct handling of
+and Pandoc - the ones I rely on are auto-completion of bibliography entries and correct handling
+of
 hard and soft line wraps.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/vim-pandoc/vim-pandoc-syntax&#34;&gt;vim-pandoc-syntax&lt;/a&gt;: Provides syntax highlighting
 for Pandoc Markdown files. In particular, it also integrates with Vim&amp;rsquo;s &lt;code&gt;conceal&lt;/code&gt; feature, which
@@ -152,9 +153,9 @@ two focus plugins I use help to eliminate these distractions and let you pay att
 writing at hand.&lt;/p&gt;
 
 &lt;p&gt;The first of these focus plugins is &lt;a href=&#34;https://github.com/junegunn/goyo.vim&#34;&gt;goyo.vim&lt;/a&gt;. &lt;code&gt;goyo&lt;/code&gt;
-essentially hides all of the unnecessary parts of the editor while you&amp;rsquo;re writing: Line numbers,
-status displays, etc. It focuses the text in the center of the screen. While this functionality
-sounds simple, it&amp;rsquo;s surprisingly nice for writing.&lt;/p&gt;
+essentially hides all the unnecessary parts of the editor while you&amp;rsquo;re writing: Line numbers, status
+displays, etc. It focuses the text in the center of the screen. While this functionality sounds
+simple, it&amp;rsquo;s surprisingly nice for writing.&lt;/p&gt;
 
 &lt;p&gt;My second focus plugin is &lt;a href=&#34;https://github.com/junegunn/limelight.vim&#34;&gt;limelight.vim&lt;/a&gt;. &lt;code&gt;limelight&lt;/code&gt;
 works very well with &lt;code&gt;goyo&lt;/code&gt;, as it brightens the color of the current paragraph of text, and dims
@@ -169,7 +170,8 @@ and style issues.&lt;/p&gt;
 
 &lt;p&gt;For the first of these issues, I use &lt;a href=&#34;https://github.com/rhysd/vim-grammarous&#34;&gt;vim-grammarous&lt;/a&gt;.
 &lt;code&gt;vim-grammarous&lt;/code&gt;, as the name implies, checks your writing for grammar errors using
-&lt;a href=&#34;https://www.languagetool.org/&#34;&gt;LanguageTool&lt;/a&gt;. It&amp;rsquo;s as simple as that, but very useful.&lt;/p&gt;
+&lt;a href=&#34;https://www.languagetool.org/&#34;&gt;LanguageTool&lt;/a&gt;. It can also use the suggested fixes from
+&lt;code&gt;LanguageTool&lt;/code&gt; to automatically edit your writing. It&amp;rsquo;s as simple as that, but very useful.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/dbmrq/vim-ditto&#34;&gt;vim-ditto&lt;/a&gt; helps to avoid using the same words ad nauseam in
 your writing&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ditto-pandoc&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ditto-pandoc&#34;&gt;13&lt;/a&gt;&lt;/sup&gt;. If it detects that you&amp;rsquo;ve used the same word too many times too close
@@ -208,7 +210,7 @@ highlight areas in need of special editing attention.&lt;/p&gt;
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:latex-cite&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:sharelatex&#34;&gt;For example, &lt;a href=&#34;https://www.sharelatex.com/learn&#34;&gt;these&lt;/a&gt;.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:sharelatex&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:unite-bibtex&#34;&gt;If you&amp;rsquo;re a Unite or Denite user, then &lt;a href=&#34;https://github.com/msprev/unite-bibtex&#34;&gt;unite-bibtex&lt;/a&gt; is a good thing to have.
+&lt;li id=&#34;fn:unite-bibtex&#34;&gt;If you&amp;rsquo;re an Unite or Denite user, then &lt;a href=&#34;https://github.com/msprev/unite-bibtex&#34;&gt;unite-bibtex&lt;/a&gt; is a good thing to have.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:unite-bibtex&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:self-promo&#34;&gt;Warning: Shameless self-promotion here.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:self-promo&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;

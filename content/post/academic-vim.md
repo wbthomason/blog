@@ -39,7 +39,7 @@ Work in computer science and other STEM fields involves writing in a blend of fo
 various languages, writing formal papers with formulae, graphics, and ordinary text, and (for some 
 of us) making detailed research notes for planning. Given this diversity of formats, there's a 
 benefit to using the same editor for them all, if that editor can adequately support them. 
-Fortunately, Vim, Emacs, and most other common programming editors have excellent support for all of
+Fortunately, Vim, Emacs, and most other common programming editors have excellent support for all 
 the formats an academic will regularly need to use.
 
 Assuming that you buy my argument for using a programming editor instead of Word, I still need to 
@@ -52,7 +52,7 @@ Vim[^spacemacs]; if you already use another editor and want to try Vim's editing
 be a good option.
 
 Finally, I favor Vim over Emacs for its plugin ecosystem, ease of use in the terminal[^terminal], 
-and speed. Vim's customization language (Vimscript) is admittedly horrible compared to Emacs Lisp, 
+and speed. Vim's customization language (Vim script) is admittedly horrible compared to Emacs Lisp, 
 but Neovim fixes some of this deficiency through its remote plugin API. Given that Neovim also adds 
 an asynchronous job API[^vim8], cleans up the Vim source code, and offers greater future 
 maintainability with no regressions from Vim's functionality, it is the best choice of Vim-family 
@@ -77,7 +77,7 @@ Pandoc is a wonderful tool for converting text written in one of a surprisingly 
 formats to an even larger number of output formats. It can take in Markdown, Emacs Org-Mode syntax, 
 Microsoft Word files, and several other formats[^formats], and output PDFs, LaTeX, HTML, and much 
 more. In typical use, you write in Pandoc Markdown --- ordinary Markdown[^markdown] extended with 
-some useful features (including footnotes, tables, defintion lists, embedded math, etc.) --- and 
+some useful features (including footnotes, tables, definition lists, embedded math, etc.) --- and 
 output whatever format you need. Pandoc is great for academic writing because it allows you to 
 easily make professional-looking documents with figures, tables, automatically-processed citations, 
 and math. Further, because Pandoc can convert to so many output formats, it's trivial to write your 
@@ -120,7 +120,7 @@ could want for the remaining 20%.
 The final piece pulling together the elements of my academic writing setup is a curated set of 
 writing plugins for Neovim. These fall loosely into three categories: [language 
 plugins](#lang-plugins), [focus plugins](#focus-plugins), and [editing plugins](#edit-plugins). I do
-use a large number of plugins other than these; you can see the full set in my [dotfiles 
+use many plugins other than these; you can see the full set in my [dotfiles 
 repo](https://github.com/wbthomason/.dotfiles).
 
 ### Language Plugins {#lang-plugins}
@@ -132,7 +132,8 @@ plugins have to offer.
 I use the following plugins for Pandoc Markdown:
 
 - [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc): Adds a number of integrations between Vim 
-  and Pandoc - the ones I rely on are autocompletion of bibliography entries and correct handling of
+  and Pandoc - the ones I rely on are auto-completion of bibliography entries and correct handling 
+  of
   hard and soft line wraps.
 - [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax): Provides syntax highlighting
   for Pandoc Markdown files. In particular, it also integrates with Vim's `conceal` feature, which 
@@ -153,7 +154,7 @@ environments, commands, etc., better LaTeX syntax highlighting, and new mappings
 LaTeX.
 
 [^self-promo]: Warning: Shameless self-promotion here.
-[^unite-bibtex]: If you're a Unite or Denite user, then [unite-bibtex](https://github.com/msprev/unite-bibtex) is a good thing to have.
+[^unite-bibtex]: If you're an Unite or Denite user, then [unite-bibtex](https://github.com/msprev/unite-bibtex) is a good thing to have.
 
 ### Focus Plugins {#focus-plugins}
 
@@ -164,9 +165,9 @@ two focus plugins I use help to eliminate these distractions and let you pay att
 writing at hand.
 
 The first of these focus plugins is [goyo.vim](https://github.com/junegunn/goyo.vim). `goyo` 
-essentially hides all of the unnecessary parts of the editor while you're writing: Line numbers, 
-status displays, etc. It focuses the text in the center of the screen. While this functionality 
-sounds simple, it's surprisingly nice for writing.
+essentially hides all the unnecessary parts of the editor while you're writing: Line numbers, status 
+displays, etc. It focuses the text in the center of the screen. While this functionality sounds 
+simple, it's surprisingly nice for writing.
 
 My second focus plugin is [limelight.vim](https://github.com/junegunn/limelight.vim). `limelight` 
 works very well with `goyo`, as it brightens the color of the current paragraph of text, and dims 
@@ -181,7 +182,8 @@ and style issues.
 
 For the first of these issues, I use [vim-grammarous](https://github.com/rhysd/vim-grammarous). 
 `vim-grammarous`, as the name implies, checks your writing for grammar errors using 
-[LanguageTool](https://www.languagetool.org/). It's as simple as that, but very useful.
+[LanguageTool](https://www.languagetool.org/). It can also use the suggested fixes from 
+`LanguageTool` to automatically edit your writing. It's as simple as that, but very useful.
 
 [vim-ditto](https://github.com/dbmrq/vim-ditto) helps to avoid using the same words ad nauseam in 
 your writing[^ditto-pandoc]. If it detects that you've used the same word too many times too close 
