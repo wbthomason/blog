@@ -13,12 +13,12 @@ categories:
   - Tooling
 ---
 
-Writing is one of the most important activities for an academic. An academic's job is to create and
+Writing is arguably the most important activity for an academic. An academic's job is to create and
 disseminate knowledge, and this cannot be done without effective writing. Thus, it is important to 
-pick the right tools for the job. These tools can be roughly split into the categories of 
-[editor](#vim), [typesetting language](#pandoc-and-latex), and [support tools](#plugins). In this 
-post, I explain my academic writing workflow with Neovim, Pandoc and LaTeX, and a curated set of 
-plugins to assist with various writing tasks.
+pick the right tools for the job. These tools are split into the categories of [editor](#vim), 
+[typesetting language](#pandoc-and-latex), and [support tools](#plugins). In this post, I explain my 
+academic writing workflow with Neovim, Pandoc and LaTeX, and a curated set of plugins for
+writing tasks.
 
 <!--more-->
 
@@ -28,27 +28,27 @@ to [the last section](#plugins).
 ## Writing with Neovim {#vim}
 
 In the programmer community, the "Emacs or Vim" debate is an unending flame war. I have no intent of 
-entering this debate[^vim]. You should use whatever editor works for you; Vim (specifically 
+entering this debate[^vim]. Use whichever editor works for you; Vim (specifically 
 [Neovim](https://neovim.io)) works for me. However --- particularly in computer science --- there 
-seems to be a bias toward Emacs, so I'll spend a bit of time explaining my preference.
+seems to be a bias toward Emacs, so I'll explain my preference.
 
-I will note that for more formal academic writing (mostly in fields other than computer science), 
-many people like something more along the lines of Microsoft Word or a specialized LaTeX editor. 
-There are good reasons to use these programs, but using Vim[^editors] is often the better choice. 
-Work in computer science and other STEM fields involves writing in a blend of formats --- coding in 
-various languages, writing formal papers with formulae, graphics, and ordinary text, and (for some 
-of us) making detailed research notes for planning. Given this diversity of formats, there's a 
-benefit to using the same editor for them all, if that editor can adequately support them. 
-Fortunately, Vim, Emacs, and most other common programming editors have excellent support for all 
-the formats an academic will regularly need to use.
+For formal academic writing (especially in fields outside of computer science), tools like Microsoft 
+Word or a specialized LaTeX editor are popular. There are good reasons to use these programs, but 
+using Vim[^editors] is often the better choice. Work in computer science and other STEM fields 
+involves writing in a blend of formats --- coding in various languages, writing formal papers with 
+formulae, graphics, and ordinary text, and (for some of us) making detailed research notes for 
+planning. Given this diversity of formats, there's a benefit to using the same editor for them all, 
+if that editor can adequately support them. Fortunately, Vim, Emacs, and most other common 
+programming editors have excellent support for all the formats an academic will regularly need to 
+use.
 
-Assuming that you buy my argument for using a programming editor instead of Word, I still need to 
-argue for my choice of Vim in particular. In my experience, while Vim has a much higher learning 
-curve than Emacs, Sublime, etc., the investment of time in learning Vim's modal editing language 
-pays dividends. Other editors provide their own means of rapidly changing and navigating text; I 
-find Vim's language of modifiers and movement operators to be the most expressive
-and flexible to use. It's worth noting that most text editors have decent plugins for emulating 
-Vim[^spacemacs]; if you already use another editor and want to try Vim's editing paradigm, these can
+Assuming you buy my argument for using a programming editor instead of Word, I still need to argue 
+for my choice of Vim in particular. In my experience, though Vim has a much higher learning curve 
+than Emacs, Sublime, etc., the investment of time in learning Vim's modal editing language pays 
+dividends. Other editors provide means of rapidly changing and navigating text; I find Vim's 
+language of modifiers and movement operators the most expressive and flexible. It's worth noting 
+that most text editors have decent plugins for emulating Vim[^spacemacs]; if you already use another 
+editor and want to try Vim's editing paradigm, these can
 be a good option.
 
 Finally, I favor Vim over Emacs for its plugin ecosystem, ease of use in the terminal[^terminal], 
@@ -73,28 +73,28 @@ flavors, Wiki format, Emacs' ``org-mode``, and LaTeX --- but I think [Pandoc](ht
 and [LaTeX](https://www.latex-project.org/) form the best pairing for academic writing. I'll give 
 some background on both and explain why I have this preference.
 
-Pandoc is a wonderful tool for converting text written in one of a surprisingly large number of 
-formats to an even larger number of output formats. It can take in Markdown, Emacs Org-Mode syntax, 
-Microsoft Word files, and several other formats[^formats], and output PDFs, LaTeX, HTML, and much 
-more. In typical use, you write in Pandoc Markdown --- ordinary Markdown[^markdown] extended with 
-some useful features (including footnotes, tables, definition lists, embedded math, etc.) --- and 
-output whatever format you need. Pandoc is great for academic writing because it allows you to 
-easily make professional-looking documents with figures, tables, automatically-processed citations, 
-and math. Further, because Pandoc can convert to so many output formats, it's trivial to write your 
+Pandoc is a wonderful tool for converting text written in one of many formats to an even larger set 
+of output formats. It takes as input Markdown, Emacs Org-Mode syntax, Microsoft Word files, and 
+several other formats[^formats], and outputs PDFs, LaTeX, HTML, and others. In typical use, you 
+write in Pandoc Markdown --- ordinary Markdown[^markdown] extended with some useful features 
+(including footnotes, tables, definition lists, embedded math, etc.) --- and output whatever format 
+you need. Pandoc is great for academic writing because it allows you to easily make 
+professional-looking documents with figures, tables, automatically-processed citations, and math. 
+Further, because Pandoc can convert Markdown to many output formats, it's trivial to write your 
 content once and publish it in several forms (e.g. in a PDF for submission to a journal or 
 conference, in HTML for publication on a website, etc.). Plus, Markdown is so easy and natural to 
 write that you can complete documents very quickly. In fact, I wrote this entire post in Markdown.
 
-With all that said, Markdown does have some shortcomings: Although the "default" is usually very 
-nice, it does not give you enough expressive power to customize every aspect of your document's 
-appearance and typesetting. For that, you need something like LaTeX. To quote the project's "About" 
+With all that said, Markdown does have some shortcomings: Though the "default" is usually very nice, 
+it does not give you enough expressive power to customize every aspect of your document's appearance 
+and typesetting. For that, you need something like LaTeX. To quote the project's "About" 
 page[^latex-cite], "LaTeX...is a document preparation system for high-quality typesetting." It is 
 already heavily used in several areas of academia (CS, mathematics, and physics in particular), but 
 is suitable for any form of academic writing. LaTeX's "best known" strength is its phenomenal 
 typesetting of math symbols, but it also provides rich facilities for controlling the layout and 
-appearance of your document. Although there can be a learning curve associated with using LaTeX, 
-there are more good learning resources[^sharelatex] now than ever. Moreover, mastering LaTeX is well
-worth the work - the most beautiful academic documents I've seen use LaTeX for their formatting.
+appearance of your document. Using LaTeX has an associated learning curve, but there are more good 
+learning resources[^sharelatex] now than ever. Moreover, mastering LaTeX is well
+worth the work - the most beautiful academic documents I've seen use LaTeX for formatting.
 
 So, why are Pandoc and LaTeX **together** a great setup for academic writing? Pandoc is very easy to
 write, and very easy to use to get an attractive result --- including math, figures, and the like. 
@@ -131,9 +131,9 @@ plugins have to offer.
 
 I use the following plugins for Pandoc Markdown:
 
-- [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc): Adds a number of integrations between Vim 
-  and Pandoc - the ones I rely on are auto-completion of bibliography entries and correct handling 
-  of
+- [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc): Adds several integrations between Vim and 
+  Pandoc 
+  - the ones I rely on are auto-completion of bibliography entries and correct handling of
   hard and soft line wraps.
 - [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax): Provides syntax highlighting
   for Pandoc Markdown files. In particular, it also integrates with Vim's `conceal` feature, which 

@@ -141,12 +141,12 @@ MathJax.Hub.Config({
   <h1 class="post-title">Using Vim for Academic Writing</h1>
   <span class="post-date">22 Mar 2017</span>
   <span class="reading-time">about 9 minutes</span>
-  <div class="post-content"><p>Writing is one of the most important activities for an academic. An academic&rsquo;s job is to create and
+  <div class="post-content"><p>Writing is arguably the most important activity for an academic. An academic&rsquo;s job is to create and
 disseminate knowledge, and this cannot be done without effective writing. Thus, it is important to
-pick the right tools for the job. These tools can be roughly split into the categories of
-<a href="#vim">editor</a>, <a href="#pandoc-and-latex">typesetting language</a>, and <a href="#plugins">support tools</a>. In this
-post, I explain my academic writing workflow with Neovim, Pandoc and LaTeX, and a curated set of
-plugins to assist with various writing tasks.</p>
+pick the right tools for the job. These tools are split into the categories of <a href="#vim">editor</a>,
+<a href="#pandoc-and-latex">typesetting language</a>, and <a href="#plugins">support tools</a>. In this post, I explain my
+academic writing workflow with Neovim, Pandoc and LaTeX, and a curated set of plugins for
+writing tasks.</p>
 
 <p></p>
 
@@ -156,27 +156,27 @@ to <a href="#plugins">the last section</a>.</p>
 <h2 id="vim">Writing with Neovim</h2>
 
 <p>In the programmer community, the &ldquo;Emacs or Vim&rdquo; debate is an unending flame war. I have no intent of
-entering this debate<sup class="footnote-ref" id="fnref:vim"><a rel="footnote" href="#fn:vim">1</a></sup>. You should use whatever editor works for you; Vim (specifically
+entering this debate<sup class="footnote-ref" id="fnref:vim"><a rel="footnote" href="#fn:vim">1</a></sup>. Use whichever editor works for you; Vim (specifically
 <a href="https://neovim.io">Neovim</a>) works for me. However &mdash; particularly in computer science &mdash; there
-seems to be a bias toward Emacs, so I&rsquo;ll spend a bit of time explaining my preference.</p>
+seems to be a bias toward Emacs, so I&rsquo;ll explain my preference.</p>
 
-<p>I will note that for more formal academic writing (mostly in fields other than computer science),
-many people like something more along the lines of Microsoft Word or a specialized LaTeX editor.
-There are good reasons to use these programs, but using Vim<sup class="footnote-ref" id="fnref:editors"><a rel="footnote" href="#fn:editors">2</a></sup> is often the better choice.
-Work in computer science and other STEM fields involves writing in a blend of formats &mdash; coding in
-various languages, writing formal papers with formulae, graphics, and ordinary text, and (for some
-of us) making detailed research notes for planning. Given this diversity of formats, there&rsquo;s a
-benefit to using the same editor for them all, if that editor can adequately support them.
-Fortunately, Vim, Emacs, and most other common programming editors have excellent support for all
-the formats an academic will regularly need to use.</p>
+<p>For formal academic writing (especially in fields outside of computer science), tools like Microsoft
+Word or a specialized LaTeX editor are popular. There are good reasons to use these programs, but
+using Vim<sup class="footnote-ref" id="fnref:editors"><a rel="footnote" href="#fn:editors">2</a></sup> is often the better choice. Work in computer science and other STEM fields
+involves writing in a blend of formats &mdash; coding in various languages, writing formal papers with
+formulae, graphics, and ordinary text, and (for some of us) making detailed research notes for
+planning. Given this diversity of formats, there&rsquo;s a benefit to using the same editor for them all,
+if that editor can adequately support them. Fortunately, Vim, Emacs, and most other common
+programming editors have excellent support for all the formats an academic will regularly need to
+use.</p>
 
-<p>Assuming that you buy my argument for using a programming editor instead of Word, I still need to
-argue for my choice of Vim in particular. In my experience, while Vim has a much higher learning
-curve than Emacs, Sublime, etc., the investment of time in learning Vim&rsquo;s modal editing language
-pays dividends. Other editors provide their own means of rapidly changing and navigating text; I
-find Vim&rsquo;s language of modifiers and movement operators to be the most expressive
-and flexible to use. It&rsquo;s worth noting that most text editors have decent plugins for emulating
-Vim<sup class="footnote-ref" id="fnref:spacemacs"><a rel="footnote" href="#fn:spacemacs">3</a></sup>; if you already use another editor and want to try Vim&rsquo;s editing paradigm, these can
+<p>Assuming you buy my argument for using a programming editor instead of Word, I still need to argue
+for my choice of Vim in particular. In my experience, though Vim has a much higher learning curve
+than Emacs, Sublime, etc., the investment of time in learning Vim&rsquo;s modal editing language pays
+dividends. Other editors provide means of rapidly changing and navigating text; I find Vim&rsquo;s
+language of modifiers and movement operators the most expressive and flexible. It&rsquo;s worth noting
+that most text editors have decent plugins for emulating Vim<sup class="footnote-ref" id="fnref:spacemacs"><a rel="footnote" href="#fn:spacemacs">3</a></sup>; if you already use another
+editor and want to try Vim&rsquo;s editing paradigm, these can
 be a good option.</p>
 
 <p>Finally, I favor Vim over Emacs for its plugin ecosystem, ease of use in the terminal<sup class="footnote-ref" id="fnref:terminal"><a rel="footnote" href="#fn:terminal">4</a></sup>,
@@ -194,28 +194,28 @@ flavors, Wiki format, Emacs&rsquo; <code>org-mode</code>, and LaTeX &mdash; but 
 and <a href="https://www.latex-project.org/">LaTeX</a> form the best pairing for academic writing. I&rsquo;ll give
 some background on both and explain why I have this preference.</p>
 
-<p>Pandoc is a wonderful tool for converting text written in one of a surprisingly large number of
-formats to an even larger number of output formats. It can take in Markdown, Emacs Org-Mode syntax,
-Microsoft Word files, and several other formats<sup class="footnote-ref" id="fnref:formats"><a rel="footnote" href="#fn:formats">7</a></sup>, and output PDFs, LaTeX, HTML, and much
-more. In typical use, you write in Pandoc Markdown &mdash; ordinary Markdown<sup class="footnote-ref" id="fnref:markdown"><a rel="footnote" href="#fn:markdown">8</a></sup> extended with
-some useful features (including footnotes, tables, definition lists, embedded math, etc.) &mdash; and
-output whatever format you need. Pandoc is great for academic writing because it allows you to
-easily make professional-looking documents with figures, tables, automatically-processed citations,
-and math. Further, because Pandoc can convert to so many output formats, it&rsquo;s trivial to write your
+<p>Pandoc is a wonderful tool for converting text written in one of many formats to an even larger set
+of output formats. It takes as input Markdown, Emacs Org-Mode syntax, Microsoft Word files, and
+several other formats<sup class="footnote-ref" id="fnref:formats"><a rel="footnote" href="#fn:formats">7</a></sup>, and outputs PDFs, LaTeX, HTML, and others. In typical use, you
+write in Pandoc Markdown &mdash; ordinary Markdown<sup class="footnote-ref" id="fnref:markdown"><a rel="footnote" href="#fn:markdown">8</a></sup> extended with some useful features
+(including footnotes, tables, definition lists, embedded math, etc.) &mdash; and output whatever format
+you need. Pandoc is great for academic writing because it allows you to easily make
+professional-looking documents with figures, tables, automatically-processed citations, and math.
+Further, because Pandoc can convert Markdown to many output formats, it&rsquo;s trivial to write your
 content once and publish it in several forms (e.g. in a PDF for submission to a journal or
 conference, in HTML for publication on a website, etc.). Plus, Markdown is so easy and natural to
 write that you can complete documents very quickly. In fact, I wrote this entire post in Markdown.</p>
 
-<p>With all that said, Markdown does have some shortcomings: Although the &ldquo;default&rdquo; is usually very
-nice, it does not give you enough expressive power to customize every aspect of your document&rsquo;s
-appearance and typesetting. For that, you need something like LaTeX. To quote the project&rsquo;s &ldquo;About&rdquo;
+<p>With all that said, Markdown does have some shortcomings: Though the &ldquo;default&rdquo; is usually very nice,
+it does not give you enough expressive power to customize every aspect of your document&rsquo;s appearance
+and typesetting. For that, you need something like LaTeX. To quote the project&rsquo;s &ldquo;About&rdquo;
 page<sup class="footnote-ref" id="fnref:latex-cite"><a rel="footnote" href="#fn:latex-cite">9</a></sup>, &ldquo;LaTeX&hellip;is a document preparation system for high-quality typesetting.&rdquo; It is
 already heavily used in several areas of academia (CS, mathematics, and physics in particular), but
 is suitable for any form of academic writing. LaTeX&rsquo;s &ldquo;best known&rdquo; strength is its phenomenal
 typesetting of math symbols, but it also provides rich facilities for controlling the layout and
-appearance of your document. Although there can be a learning curve associated with using LaTeX,
-there are more good learning resources<sup class="footnote-ref" id="fnref:sharelatex"><a rel="footnote" href="#fn:sharelatex">10</a></sup> now than ever. Moreover, mastering LaTeX is well
-worth the work - the most beautiful academic documents I&rsquo;ve seen use LaTeX for their formatting.</p>
+appearance of your document. Using LaTeX has an associated learning curve, but there are more good
+learning resources<sup class="footnote-ref" id="fnref:sharelatex"><a rel="footnote" href="#fn:sharelatex">10</a></sup> now than ever. Moreover, mastering LaTeX is well
+worth the work - the most beautiful academic documents I&rsquo;ve seen use LaTeX for formatting.</p>
 
 <p>So, why are Pandoc and LaTeX <strong>together</strong> a great setup for academic writing? Pandoc is very easy to
 write, and very easy to use to get an attractive result &mdash; including math, figures, and the like.
@@ -247,10 +247,13 @@ plugins have to offer.</p>
 <p>I use the following plugins for Pandoc Markdown:</p>
 
 <ul>
-<li><a href="https://github.com/vim-pandoc/vim-pandoc">vim-pandoc</a>: Adds a number of integrations between Vim
-and Pandoc - the ones I rely on are auto-completion of bibliography entries and correct handling
-of
+<li><a href="https://github.com/vim-pandoc/vim-pandoc">vim-pandoc</a>: Adds several integrations between Vim and
+Pandoc
+
+<ul>
+<li>the ones I rely on are auto-completion of bibliography entries and correct handling of
 hard and soft line wraps.</li>
+</ul></li>
 <li><a href="https://github.com/vim-pandoc/vim-pandoc-syntax">vim-pandoc-syntax</a>: Provides syntax highlighting
 for Pandoc Markdown files. In particular, it also integrates with Vim&rsquo;s <code>conceal</code> feature, which
 makes certain elements of Pandoc&rsquo;s formatting syntax render in more visually appealing ways.</li>
