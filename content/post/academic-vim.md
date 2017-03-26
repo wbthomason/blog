@@ -110,7 +110,7 @@ use for the 80% of the work that doesn't require tremendous power, and all the t
 could want for the remaining 20%.
 
 [^lang]: Programming language or format, not natural language.
-[^formats]: All of which are listed on [`pandoc`'s website'](https://pandoc.org).
+[^formats]: All of which are listed on [Pandoc's website](https://pandoc.org).
 [^markdown]: A very simple language for structuring text, commonly used by Github and many other websites. See [here](https://daringfireball.net/projects/markdown/) for more.
 [^latex-cite]: Found here: https://www.latex-project.org/about/
 [^sharelatex]: For example, [these](https://www.sharelatex.com/learn).
@@ -118,4 +118,82 @@ could want for the remaining 20%.
 ## Support Tools {#plugins}
 
 The final piece pulling together the elements of my academic writing setup is a curated set of 
-writing plugins for Neovim.
+writing plugins for Neovim. These fall loosely into three categories: [language 
+plugins](#lang-plugins), [focus plugins](#focus-plugins), and [editing plugins](#edit-plugins). I do
+use a large number of plugins other than these; you can see the full set in my [dotfiles 
+repo](https://github.com/wbthomason/.dotfiles).
+
+### Language Plugins {#lang-plugins}
+
+Language plugins are plugins which add support to Neovim for new languages. While Neovim offers 
+basic syntax highlighting support for many languages out of the box, there's a lot more that these 
+plugins have to offer.
+
+I use the following plugins for Pandoc Markdown:
+
+- [vim-pandoc](https://github.com/vim-pandoc/vim-pandoc): Adds a number of integrations between Vim 
+  and Pandoc - the ones I rely on are autocompletion of bibliography entries and correct handling of
+  hard and soft line wraps.
+- [vim-pandoc-syntax](https://github.com/vim-pandoc/vim-pandoc-syntax): Provides syntax highlighting
+  for Pandoc Markdown files. In particular, it also integrates with Vim's `conceal` feature, which 
+  makes certain elements of Pandoc's formatting syntax render in more visually appealing ways.
+- [vim-pandoc-after](https://github.com/vim-pandoc/vim-pandoc-after): Adds integrations with 
+  [unite.vim](https://github.com/Shougo/unite.vim)[^unite-bibtex] and 
+  [UltiSnips](https://github.com/SirVer/ultisnips).
+
+I also use[^self-promo] a plugin I wrote, [buildit.nvim](https://github.com/wbthomason/buildit.nvim)
+to compile my Markdown into PDF form using a Makefile. While `vim-pandoc` can asynchronously run the
+Pandoc program, I find it easier to type the options I want to pass just once into a Makefile and 
+know that my collaborators can also easily build the text without having to type the exact same 
+invocation.
+
+For LaTeX, I am a big fan of [vimtex](https://github.com/lervag/vimtex). `vimtex` offers 
+auto-compilation on every save, completion of citation and file names, text objects for LaTeX 
+environments, commands, etc., better LaTeX syntax highlighting, and new mappings for working with 
+LaTeX.
+
+[^self-promo]: Warning: Shameless self-promotion here.
+[^unite-bibtex]: If you're a Unite or Denite user, then [unite-bibtex](https://github.com/msprev/unite-bibtex) is a good thing to have.
+
+### Focus Plugins {#focus-plugins}
+
+A focus plugin is a plugin designed to help you focus on what you're writing. While working on a 
+large document, it can be easy to become distracted by sections other than the one you're currently 
+writing, indicators of length or other metrics in the editor, and other extraneous information. The 
+two focus plugins I use help to eliminate these distractions and let you pay attention to the 
+writing at hand.
+
+The first of these focus plugins is [goyo.vim](https://github.com/junegunn/goyo.vim). `goyo` 
+essentially hides all of the unnecessary parts of the editor while you're writing: Line numbers, 
+status displays, etc. It focuses the text in the center of the screen. While this functionality 
+sounds simple, it's surprisingly nice for writing.
+
+My second focus plugin is [limelight.vim](https://github.com/junegunn/limelight.vim). `limelight` 
+works very well with `goyo`, as it brightens the color of the current paragraph of text, and dims 
+everything else. In other words, everything but what you need to be focused on fades to the 
+background.
+
+### Editing Plugins {#edit-plugins}
+
+The final set of plugins I use for writing falls into the category of editing plugins. An editing 
+plugin is one designed to help make your writing better --- things like grammar checks, word usage, 
+and style issues.
+
+For the first of these issues, I use [vim-grammarous](https://github.com/rhysd/vim-grammarous). 
+`vim-grammarous`, as the name implies, checks your writing for grammar errors using 
+[LanguageTool](https://www.languagetool.org/). It's as simple as that, but very useful.
+
+[vim-ditto](https://github.com/dbmrq/vim-ditto) helps to avoid using the same words ad nauseam in 
+your writing[^ditto-pandoc]. If it detects that you've used the same word too many times too close 
+to one another (ignoring, of course, very common words), it will highlight the overused term in red.
+This plugin is another great example of a simple piece of functionality that can drastically improve
+your writing.
+
+Finally, for more advanced checks of usage and style, I like 
+[vim-wordy](https://github.com/reedes/vim-wordy). While I'm a relatively new user of `vim-wordy` 
+myself, and thus still learning all it can do, it is a very powerful plugin for writers. It can 
+check for things like weak and lazy words, redundant or problematic usage, weasel words, the passive
+voice, and much, much more. I typically run `vim-wordy` once I've finished my first draft, to 
+highlight areas in need of special editing attention.
+
+[^ditto-pandoc]: For instance, it's going crazy on the word "Pandoc" in this piece.

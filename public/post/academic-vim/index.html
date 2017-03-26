@@ -140,7 +140,7 @@ MathJax.Hub.Config({
 <div class="post">
   <h1 class="post-title">Using Vim for Academic Writing</h1>
   <span class="post-date">22 Mar 2017</span>
-  <span class="reading-time">about 6 minutes</span>
+  <span class="reading-time">about 9 minutes</span>
   <div class="post-content"><p>Writing is one of the most important activities for an academic. An academic&rsquo;s job is to create and
 disseminate knowledge, and this cannot be done without effective writing. Thus, it is important to
 pick the right tools for the job. These tools can be roughly split into the categories of
@@ -233,13 +233,88 @@ could want for the remaining 20%.</p>
 <h2 id="plugins">Support Tools</h2>
 
 <p>The final piece pulling together the elements of my academic writing setup is a curated set of
-writing plugins for Neovim.</p>
+writing plugins for Neovim. These fall loosely into three categories: <a href="#lang-plugins">language
+plugins</a>, <a href="#focus-plugins">focus plugins</a>, and <a href="#edit-plugins">editing plugins</a>. I do
+use a large number of plugins other than these; you can see the full set in my <a href="https://github.com/wbthomason/.dotfiles">dotfiles
+repo</a>.</p>
+
+<h3 id="lang-plugins">Language Plugins</h3>
+
+<p>Language plugins are plugins which add support to Neovim for new languages. While Neovim offers
+basic syntax highlighting support for many languages out of the box, there&rsquo;s a lot more that these
+plugins have to offer.</p>
+
+<p>I use the following plugins for Pandoc Markdown:</p>
+
+<ul>
+<li><a href="https://github.com/vim-pandoc/vim-pandoc">vim-pandoc</a>: Adds a number of integrations between Vim
+and Pandoc - the ones I rely on are autocompletion of bibliography entries and correct handling of
+hard and soft line wraps.</li>
+<li><a href="https://github.com/vim-pandoc/vim-pandoc-syntax">vim-pandoc-syntax</a>: Provides syntax highlighting
+for Pandoc Markdown files. In particular, it also integrates with Vim&rsquo;s <code>conceal</code> feature, which
+makes certain elements of Pandoc&rsquo;s formatting syntax render in more visually appealing ways.</li>
+<li><a href="https://github.com/vim-pandoc/vim-pandoc-after">vim-pandoc-after</a>: Adds integrations with
+<a href="https://github.com/Shougo/unite.vim">unite.vim</a><sup class="footnote-ref" id="fnref:unite-bibtex"><a rel="footnote" href="#fn:unite-bibtex">11</a></sup> and
+<a href="https://github.com/SirVer/ultisnips">UltiSnips</a>.</li>
+</ul>
+
+<p>I also use<sup class="footnote-ref" id="fnref:self-promo"><a rel="footnote" href="#fn:self-promo">12</a></sup> a plugin I wrote, <a href="https://github.com/wbthomason/buildit.nvim">buildit.nvim</a>
+to compile my Markdown into PDF form using a Makefile. While <code>vim-pandoc</code> can asynchronously run the
+Pandoc program, I find it easier to type the options I want to pass just once into a Makefile and
+know that my collaborators can also easily build the text without having to type the exact same
+invocation.</p>
+
+<p>For LaTeX, I am a big fan of <a href="https://github.com/lervag/vimtex">vimtex</a>. <code>vimtex</code> offers
+auto-compilation on every save, completion of citation and file names, text objects for LaTeX
+environments, commands, etc., better LaTeX syntax highlighting, and new mappings for working with
+LaTeX.</p>
+
+<h3 id="focus-plugins">Focus Plugins</h3>
+
+<p>A focus plugin is a plugin designed to help you focus on what you&rsquo;re writing. While working on a
+large document, it can be easy to become distracted by sections other than the one you&rsquo;re currently
+writing, indicators of length or other metrics in the editor, and other extraneous information. The
+two focus plugins I use help to eliminate these distractions and let you pay attention to the
+writing at hand.</p>
+
+<p>The first of these focus plugins is <a href="https://github.com/junegunn/goyo.vim">goyo.vim</a>. <code>goyo</code>
+essentially hides all of the unnecessary parts of the editor while you&rsquo;re writing: Line numbers,
+status displays, etc. It focuses the text in the center of the screen. While this functionality
+sounds simple, it&rsquo;s surprisingly nice for writing.</p>
+
+<p>My second focus plugin is <a href="https://github.com/junegunn/limelight.vim">limelight.vim</a>. <code>limelight</code>
+works very well with <code>goyo</code>, as it brightens the color of the current paragraph of text, and dims
+everything else. In other words, everything but what you need to be focused on fades to the
+background.</p>
+
+<h3 id="edit-plugins">Editing Plugins</h3>
+
+<p>The final set of plugins I use for writing falls into the category of editing plugins. An editing
+plugin is one designed to help make your writing better &mdash; things like grammar checks, word usage,
+and style issues.</p>
+
+<p>For the first of these issues, I use <a href="https://github.com/rhysd/vim-grammarous">vim-grammarous</a>.
+<code>vim-grammarous</code>, as the name implies, checks your writing for grammar errors using
+<a href="https://www.languagetool.org/">LanguageTool</a>. It&rsquo;s as simple as that, but very useful.</p>
+
+<p><a href="https://github.com/dbmrq/vim-ditto">vim-ditto</a> helps to avoid using the same words ad nauseam in
+your writing<sup class="footnote-ref" id="fnref:ditto-pandoc"><a rel="footnote" href="#fn:ditto-pandoc">13</a></sup>. If it detects that you&rsquo;ve used the same word too many times too close
+to one another (ignoring, of course, very common words), it will highlight the overused term in red.
+This plugin is another great example of a simple piece of functionality that can drastically improve
+your writing.</p>
+
+<p>Finally, for more advanced checks of usage and style, I like
+<a href="https://github.com/reedes/vim-wordy">vim-wordy</a>. While I&rsquo;m a relatively new user of <code>vim-wordy</code>
+myself, and thus still learning all it can do, it is a very powerful plugin for writers. It can
+check for things like weak and lazy words, redundant or problematic usage, weasel words, the passive
+voice, and much, much more. I typically run <code>vim-wordy</code> once I&rsquo;ve finished my first draft, to
+highlight areas in need of special editing attention.</p>
 <div class="footnotes">
 
 <hr />
 
 <ol>
-<li id="fn:vim">Though Vim is definitely better<sup class="footnote-ref" id="fnref:jokes"><a rel="footnote" href="#fn:jokes">11</a></sup>.
+<li id="fn:vim">Though Vim is definitely better<sup class="footnote-ref" id="fnref:jokes"><a rel="footnote" href="#fn:jokes">14</a></sup>.
  <a class="footnote-return" href="#fnref:vim"><sup>[return]</sup></a></li>
 <li id="fn:editors">Or another general purpose editor.
  <a class="footnote-return" href="#fnref:editors"><sup>[return]</sup></a></li>
@@ -251,7 +326,7 @@ writing plugins for Neovim.</p>
  <a class="footnote-return" href="#fnref:vim8"><sup>[return]</sup></a></li>
 <li id="fn:lang">Programming language or format, not natural language.
  <a class="footnote-return" href="#fnref:lang"><sup>[return]</sup></a></li>
-<li id="fn:formats">All of which are listed on <a href="https://pandoc.org"><code>pandoc</code>&rsquo;s website&rsquo;</a>.
+<li id="fn:formats">All of which are listed on <a href="https://pandoc.org">Pandoc&rsquo;s website</a>.
  <a class="footnote-return" href="#fnref:formats"><sup>[return]</sup></a></li>
 <li id="fn:markdown">A very simple language for structuring text, commonly used by Github and many other websites. See <a href="https://daringfireball.net/projects/markdown/">here</a> for more.
  <a class="footnote-return" href="#fnref:markdown"><sup>[return]</sup></a></li>
@@ -259,6 +334,12 @@ writing plugins for Neovim.</p>
  <a class="footnote-return" href="#fnref:latex-cite"><sup>[return]</sup></a></li>
 <li id="fn:sharelatex">For example, <a href="https://www.sharelatex.com/learn">these</a>.
  <a class="footnote-return" href="#fnref:sharelatex"><sup>[return]</sup></a></li>
+<li id="fn:unite-bibtex">If you&rsquo;re a Unite or Denite user, then <a href="https://github.com/msprev/unite-bibtex">unite-bibtex</a> is a good thing to have.
+ <a class="footnote-return" href="#fnref:unite-bibtex"><sup>[return]</sup></a></li>
+<li id="fn:self-promo">Warning: Shameless self-promotion here.
+ <a class="footnote-return" href="#fnref:self-promo"><sup>[return]</sup></a></li>
+<li id="fn:ditto-pandoc">For instance, it&rsquo;s going crazy on the word &ldquo;Pandoc&rdquo; in this piece.
+ <a class="footnote-return" href="#fnref:ditto-pandoc"><sup>[return]</sup></a></li>
 <li id="fn:jokes">Kidding, kidding. Any Emacs fans in the audience can put down their parenthetical pitchforks.
  <a class="footnote-return" href="#fnref:jokes"><sup>[return]</sup></a></li>
 </ol>
