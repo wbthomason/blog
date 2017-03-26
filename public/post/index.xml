@@ -19,12 +19,15 @@
 disseminate knowledge, and this cannot be done without effective writing. Thus, it is important to
 pick the right tools for the job. These tools can be roughly split into the categories of
 &lt;a href=&#34;#vim&#34;&gt;editor&lt;/a&gt;, &lt;a href=&#34;#pandoc-and-latex&#34;&gt;typesetting language&lt;/a&gt;, and &lt;a href=&#34;#plugins&#34;&gt;support tools&lt;/a&gt;. In this
-post, I explain my academic writing workflow using Neovim, Pandoc and LaTeX, and a curated set of
+post, I explain my academic writing workflow with Neovim, Pandoc and LaTeX, and a curated set of
 plugins to assist with various writing tasks.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;vim&#34;&gt;Writing with Neovim&lt;/h1&gt;
+&lt;p&gt;If you already use my combination of Neovim, Pandoc, and LaTeX, you&amp;rsquo;ll probably want to skip ahead
+to &lt;a href=&#34;#plugins&#34;&gt;the last section&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;vim&#34;&gt;Writing with Neovim&lt;/h2&gt;
 
 &lt;p&gt;In the programmer community, the &amp;ldquo;Emacs or Vim&amp;rdquo; debate is an unending flame war. I have no intent of
 entering this debate&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vim&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:vim&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. You should use whatever editor works for you; Vim (specifically
@@ -42,10 +45,10 @@ Fortunately, Vim, Emacs, and most other common programming editors have excellen
 the formats an academic will regularly need to use.&lt;/p&gt;
 
 &lt;p&gt;Assuming that you buy my argument for using a programming editor instead of Word, I still need to
-argue for my choice of Vim in particular. It is my experience that while Vim has a much higher
-learning curve than Emacs, Sublime Text, etc., the investment of time in learning Vim&amp;rsquo;s modal
-editing language pays dividends. Other editors provide their own means of rapidly changing and
-navigating text; I find Vim&amp;rsquo;s language of modifiers and movement operators to be the most expressive
+argue for my choice of Vim in particular. In my experience, while Vim has a much higher learning
+curve than Emacs, Sublime, etc., the investment of time in learning Vim&amp;rsquo;s modal editing language
+pays dividends. Other editors provide their own means of rapidly changing and navigating text; I
+find Vim&amp;rsquo;s language of modifiers and movement operators to be the most expressive
 and flexible to use. It&amp;rsquo;s worth noting that most text editors have decent plugins for emulating
 Vim&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:spacemacs&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:spacemacs&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;; if you already use another editor and want to try Vim&amp;rsquo;s editing paradigm, these can
 be a good option.&lt;/p&gt;
@@ -57,19 +60,60 @@ an asynchronous job API&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vim8&#
 maintainability with no regressions from Vim&amp;rsquo;s functionality, it is the best choice of Vim-family
 editors.&lt;/p&gt;
 
-&lt;h1 id=&#34;pandoc-and-latex&#34;&gt;Pandoc Markdown and LaTeX&lt;/h1&gt;
+&lt;h2 id=&#34;pandoc-and-latex&#34;&gt;Pandoc Markdown and LaTeX&lt;/h2&gt;
 
-&lt;p&gt;Regardless of the editor you choose, it is important to give thought&lt;/p&gt;
+&lt;p&gt;Regardless of the editor you choose, it is important to give thought to the right language&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:lang&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:lang&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; to
+use for writing. There are many options &amp;mdash; popular ones include plain text, Markdown of various
+flavors, Wiki format, Emacs&amp;rsquo; &lt;code&gt;org-mode&lt;/code&gt;, and LaTeX &amp;mdash; but I think &lt;a href=&#34;https://pandoc.org&#34;&gt;Pandoc&lt;/a&gt;
+and &lt;a href=&#34;https://www.latex-project.org/&#34;&gt;LaTeX&lt;/a&gt; form the best pairing for academic writing. I&amp;rsquo;ll give
+some background on both and explain why I have this preference.&lt;/p&gt;
 
-&lt;h1 id=&#34;plugins&#34;&gt;Support Tools&lt;/h1&gt;
+&lt;p&gt;Pandoc is a wonderful tool for converting text written in one of a surprisingly large number of
+formats to an even larger number of output formats. It can take in Markdown, Emacs Org-Mode syntax,
+Microsoft Word files, and several other formats&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:formats&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:formats&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;, and output PDFs, LaTeX, HTML, and much
+more. In typical use, you write in Pandoc Markdown &amp;mdash; ordinary Markdown&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:markdown&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:markdown&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; extended with
+some useful features (including footnotes, tables, defintion lists, embedded math, etc.) &amp;mdash; and
+output whatever format you need. Pandoc is great for academic writing because it allows you to
+easily make professional-looking documents with figures, tables, automatically-processed citations,
+and math. Further, because Pandoc can convert to so many output formats, it&amp;rsquo;s trivial to write your
+content once and publish it in several forms (e.g. in a PDF for submission to a journal or
+conference, in HTML for publication on a website, etc.). Plus, Markdown is so easy and natural to
+write that you can complete documents very quickly. In fact, I wrote this entire post in Markdown.&lt;/p&gt;
 
-&lt;p&gt;bar&lt;/p&gt;
+&lt;p&gt;With all that said, Markdown does have some shortcomings: Although the &amp;ldquo;default&amp;rdquo; is usually very
+nice, it does not give you enough expressive power to customize every aspect of your document&amp;rsquo;s
+appearance and typesetting. For that, you need something like LaTeX. To quote the project&amp;rsquo;s &amp;ldquo;About&amp;rdquo;
+page&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:latex-cite&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:latex-cite&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;, &amp;ldquo;LaTeX&amp;hellip;is a document preparation system for high-quality typesetting.&amp;rdquo; It is
+already heavily used in several areas of academia (CS, mathematics, and physics in particular), but
+is suitable for any form of academic writing. LaTeX&amp;rsquo;s &amp;ldquo;best known&amp;rdquo; strength is its phenomenal
+typesetting of math symbols, but it also provides rich facilities for controlling the layout and
+appearance of your document. Although there can be a learning curve associated with using LaTeX,
+there are more good learning resources&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:sharelatex&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:sharelatex&#34;&gt;10&lt;/a&gt;&lt;/sup&gt; now than ever. Moreover, mastering LaTeX is well
+worth the work - the most beautiful academic documents I&amp;rsquo;ve seen use LaTeX for their formatting.&lt;/p&gt;
+
+&lt;p&gt;So, why are Pandoc and LaTeX &lt;strong&gt;together&lt;/strong&gt; a great setup for academic writing? Pandoc is very easy to
+write, and very easy to use to get an attractive result &amp;mdash; including math, figures, and the like.
+However, it isn&amp;rsquo;t easy to tweak appearance in Pandoc Markdown &amp;mdash; but it is in LaTeX. Fortunately,
+Pandoc can convert from Markdown &lt;em&gt;straight to&lt;/em&gt; LaTeX. This functionality presents an attractive
+workflow: You can start a project writing in Markdown. Use it for your notes, your planning, and
+your early paper drafts. When you reach the stage of a project where the content is largely done and
+it is time to focus on tweaking the appearance and making everything &amp;ldquo;just so&amp;rdquo;, you can run Pandoc
+on your Markdown file to output LaTeX source and continue editing with greater control.&lt;/p&gt;
+
+&lt;p&gt;Thus, by starting your writing in Markdown and ending with LaTeX, you get a nice balance of ease of
+use for the 80% of the work that doesn&amp;rsquo;t require tremendous power, and all the typesetting power you
+could want for the remaining 20%.&lt;/p&gt;
+
+&lt;h2 id=&#34;plugins&#34;&gt;Support Tools&lt;/h2&gt;
+
+&lt;p&gt;The final piece pulling together the elements of my academic writing setup is a curated set of
+writing plugins for Neovim.&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:vim&#34;&gt;Though Vim is definitely better&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:jokes&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:jokes&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;.
+&lt;li id=&#34;fn:vim&#34;&gt;Though Vim is definitely better&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:jokes&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:jokes&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:vim&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:editors&#34;&gt;Or another general purpose editor.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:editors&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
@@ -79,6 +123,16 @@ editors.&lt;/p&gt;
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:terminal&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:vim8&#34;&gt;Vim 8 also added an asynchronous job API.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:vim8&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:lang&#34;&gt;Programming language or format, not natural language.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:lang&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:formats&#34;&gt;All of which are listed on &lt;a href=&#34;https://pandoc.org&#34;&gt;&lt;code&gt;pandoc&lt;/code&gt;&amp;rsquo;s website&amp;rsquo;&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:formats&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:markdown&#34;&gt;A very simple language for structuring text, commonly used by Github and many other websites. See &lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34;&gt;here&lt;/a&gt; for more.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:markdown&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:latex-cite&#34;&gt;Found here: &lt;a href=&#34;https://www.latex-project.org/about/&#34;&gt;https://www.latex-project.org/about/&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:latex-cite&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:sharelatex&#34;&gt;For example, &lt;a href=&#34;https://www.sharelatex.com/learn&#34;&gt;these&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:sharelatex&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:jokes&#34;&gt;Kidding, kidding. Any Emacs fans in the audience can put down their parenthetical pitchforks.
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:jokes&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
