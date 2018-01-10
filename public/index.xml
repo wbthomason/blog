@@ -2,12 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>something bloglike</title>
-    <link>https://wbthomason.github.io/blog/index.xml</link>
+    <link>https://wbthomason.github.io/blog/</link>
     <description>Recent content on something bloglike</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Mar 2017 00:05:36 -0400</lastBuildDate>
-    <atom:link href="https://wbthomason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jan 2018 12:31:53 -0500</lastBuildDate>
+    
+	<atom:link href="https://wbthomason.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thoughts on Text Editor Design</title>
+      <link>https://wbthomason.github.io/blog/post/thoughts-editor-design/</link>
+      <pubDate>Wed, 10 Jan 2018 12:31:53 -0500</pubDate>
+      
+      <guid>https://wbthomason.github.io/blog/post/thoughts-editor-design/</guid>
+      <description>&lt;p&gt;This is a messy collection of thoughts about what a proper, modern text editor should be alongside
+some thoughts/planning for the implementation of such an editor. I pulled it straight from my
+personal notes, so it&amp;rsquo;s not cleaned up and was originally intended for my personal use. I&amp;rsquo;m putting
+it here so that I can more easily get some external opinions on it.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Using Vim for Academic Writing</title>
@@ -22,207 +38,7 @@ pick the right tools for the job. These tools are split into the categories of &
 academic writing workflow with Neovim, Pandoc and LaTeX, and a curated set of plugins for
 writing tasks.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;If you already use my combination of Neovim, Pandoc, and LaTeX, you&amp;rsquo;ll probably want to skip ahead
-to &lt;a href=&#34;#plugins&#34;&gt;the last section&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;vim&#34;&gt;Writing with Neovim&lt;/h2&gt;
-
-&lt;p&gt;In the programmer community, the &amp;ldquo;Emacs or Vim&amp;rdquo; debate is an unending flame war. I have no intent of
-entering this debate&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vim&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:vim&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. Use whichever editor works for you; Vim (specifically
-&lt;a href=&#34;https://neovim.io&#34;&gt;Neovim&lt;/a&gt;) works for me. However &amp;mdash; particularly in computer science &amp;mdash; there
-seems to be a bias toward Emacs, so I&amp;rsquo;ll explain my preference.&lt;/p&gt;
-
-&lt;p&gt;For formal academic writing (especially in fields outside of computer science), tools like Microsoft
-Word or a specialized LaTeX editor are popular. There are good reasons to use these programs, but
-using Vim&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:editors&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:editors&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; is often the better choice. Work in computer science and other STEM fields
-involves writing in a blend of formats &amp;mdash; coding in various languages, writing formal papers with
-formulae, graphics, and ordinary text, and (for some of us) making detailed research notes for
-planning. Given this diversity of formats, there&amp;rsquo;s a benefit to using the same editor for them all,
-if that editor can adequately support them. Fortunately, Vim, Emacs, and most other common
-programming editors have excellent support for all the formats an academic will regularly need to
-use.&lt;/p&gt;
-
-&lt;p&gt;Assuming you buy my argument for using a programming editor instead of Word, I still need to argue
-for my choice of Vim in particular. In my experience, though Vim has a much higher learning curve
-than Emacs, Sublime, etc., the investment of time in learning Vim&amp;rsquo;s modal editing language pays
-dividends. Other editors provide means of rapidly changing and navigating text; I find Vim&amp;rsquo;s
-language of modifiers and movement operators the most expressive and flexible. It&amp;rsquo;s worth noting
-that most text editors have decent plugins for emulating Vim&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:spacemacs&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:spacemacs&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;; if you already use another
-editor and want to try Vim&amp;rsquo;s editing paradigm, these can
-be a good option.&lt;/p&gt;
-
-&lt;p&gt;Finally, I favor Vim over Emacs for its plugin ecosystem, ease of use in the terminal&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:terminal&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:terminal&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;,
-and speed. Vim&amp;rsquo;s customization language (Vim script) is admittedly horrible compared to Emacs Lisp,
-but Neovim fixes some of this deficiency through its remote plugin API. Given that Neovim also adds
-an asynchronous job API&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:vim8&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:vim8&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;, cleans up the Vim source code, and offers greater future
-maintainability with no regressions from Vim&amp;rsquo;s functionality, it is the best choice of Vim-family
-editors.&lt;/p&gt;
-
-&lt;h2 id=&#34;pandoc-and-latex&#34;&gt;Pandoc Markdown and LaTeX&lt;/h2&gt;
-
-&lt;p&gt;Regardless of the editor you choose, it is important to give thought to the right language&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:lang&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:lang&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; to
-use for writing. There are many options &amp;mdash; popular ones include plain text, Markdown of various
-flavors, Wiki format, Emacs&amp;rsquo; &lt;code&gt;org-mode&lt;/code&gt;, and LaTeX &amp;mdash; but I think &lt;a href=&#34;https://pandoc.org&#34;&gt;Pandoc&lt;/a&gt;
-and &lt;a href=&#34;https://www.latex-project.org/&#34;&gt;LaTeX&lt;/a&gt; form the best pairing for academic writing. I&amp;rsquo;ll give
-some background on both and explain why I have this preference.&lt;/p&gt;
-
-&lt;p&gt;Pandoc is a wonderful tool for converting text written in one of many formats to an even larger set
-of output formats. It takes as input Markdown, Emacs Org-Mode syntax, Microsoft Word files, and
-several other formats&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:formats&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:formats&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;, and outputs PDFs, LaTeX, HTML, and others. In typical use, you
-write in Pandoc Markdown &amp;mdash; ordinary Markdown&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:markdown&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:markdown&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; extended with some useful features
-(including footnotes, tables, definition lists, embedded math, etc.) &amp;mdash; and output whatever format
-you need. Pandoc is great for academic writing because it allows you to easily make
-professional-looking documents with figures, tables, automatically-processed citations, and math.
-Further, because Pandoc can convert Markdown to many output formats, it&amp;rsquo;s trivial to write your
-content once and publish it in several forms (e.g. in a PDF for submission to a journal or
-conference, in HTML for publication on a website, etc.). Plus, Markdown is so easy and natural to
-write that you can complete documents very quickly. In fact, I wrote this entire post in Markdown.&lt;/p&gt;
-
-&lt;p&gt;With all that said, Markdown does have some shortcomings: Though the &amp;ldquo;default&amp;rdquo; is usually very nice,
-it does not give you enough expressive power to customize every aspect of your document&amp;rsquo;s appearance
-and typesetting. For that, you need something like LaTeX. To quote the project&amp;rsquo;s &amp;ldquo;About&amp;rdquo;
-page&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:latex-cite&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:latex-cite&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;, &amp;ldquo;LaTeX&amp;hellip;is a document preparation system for high-quality typesetting.&amp;rdquo; It is
-already heavily used in several areas of academia (CS, mathematics, and physics in particular), but
-is suitable for any form of academic writing. LaTeX&amp;rsquo;s &amp;ldquo;best known&amp;rdquo; strength is its phenomenal
-typesetting of math symbols, but it also provides rich facilities for controlling the layout and
-appearance of your document. Using LaTeX has an associated learning curve, but there are more good
-learning resources&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:sharelatex&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:sharelatex&#34;&gt;10&lt;/a&gt;&lt;/sup&gt; now than ever. Moreover, mastering LaTeX is well
-worth the work - the most beautiful academic documents I&amp;rsquo;ve seen use LaTeX for formatting.&lt;/p&gt;
-
-&lt;p&gt;So, why are Pandoc and LaTeX &lt;strong&gt;together&lt;/strong&gt; a great setup for academic writing? Pandoc is very easy to
-write, and very easy to use to get an attractive result &amp;mdash; including math, figures, and the like.
-However, it isn&amp;rsquo;t easy to tweak appearance in Pandoc Markdown &amp;mdash; but it is in LaTeX. Fortunately,
-Pandoc can convert from Markdown &lt;em&gt;straight to&lt;/em&gt; LaTeX. This functionality presents an attractive
-workflow: You can start a project writing in Markdown. Use it for your notes, your planning, and
-your early paper drafts. When you reach the stage of a project where the content is largely done and
-it is time to focus on tweaking the appearance and making everything &amp;ldquo;just so&amp;rdquo;, you can run Pandoc
-on your Markdown file to output LaTeX source and continue editing with greater control.&lt;/p&gt;
-
-&lt;p&gt;Thus, by starting your writing in Markdown and ending with LaTeX, you get a nice balance of ease of
-use for the 80% of the work that doesn&amp;rsquo;t require tremendous power, and all the typesetting power you
-could want for the remaining 20%.&lt;/p&gt;
-
-&lt;h2 id=&#34;plugins&#34;&gt;Support Tools&lt;/h2&gt;
-
-&lt;p&gt;The final piece pulling together the elements of my academic writing setup is a curated set of
-writing plugins for Neovim. These fall loosely into three categories: &lt;a href=&#34;#lang-plugins&#34;&gt;language
-plugins&lt;/a&gt;, &lt;a href=&#34;#focus-plugins&#34;&gt;focus plugins&lt;/a&gt;, and &lt;a href=&#34;#edit-plugins&#34;&gt;editing plugins&lt;/a&gt;. I do
-use many plugins other than these; you can see the full set in my &lt;a href=&#34;https://github.com/wbthomason/.dotfiles&#34;&gt;dotfiles
-repo&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;lang-plugins&#34;&gt;Language Plugins&lt;/h3&gt;
-
-&lt;p&gt;Language plugins are plugins which add support to Neovim for new languages. While Neovim offers
-basic syntax highlighting support for many languages out of the box, there&amp;rsquo;s a lot more that these
-plugins have to offer.&lt;/p&gt;
-
-&lt;p&gt;I use the following plugins for Pandoc Markdown:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vim-pandoc/vim-pandoc&#34;&gt;vim-pandoc&lt;/a&gt;: Adds several integrations between Vim and
-Pandoc
-
-&lt;ul&gt;
-&lt;li&gt;the ones I rely on are auto-completion of bibliography entries and correct handling of
-hard and soft line wraps.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vim-pandoc/vim-pandoc-syntax&#34;&gt;vim-pandoc-syntax&lt;/a&gt;: Provides syntax highlighting
-for Pandoc Markdown files. In particular, it also integrates with Vim&amp;rsquo;s &lt;code&gt;conceal&lt;/code&gt; feature, which
-makes certain elements of Pandoc&amp;rsquo;s formatting syntax render in more visually appealing ways.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/vim-pandoc/vim-pandoc-after&#34;&gt;vim-pandoc-after&lt;/a&gt;: Adds integrations with
-&lt;a href=&#34;https://github.com/Shougo/unite.vim&#34;&gt;unite.vim&lt;/a&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:unite-bibtex&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:unite-bibtex&#34;&gt;11&lt;/a&gt;&lt;/sup&gt; and
-&lt;a href=&#34;https://github.com/SirVer/ultisnips&#34;&gt;UltiSnips&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I also use&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:self-promo&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:self-promo&#34;&gt;12&lt;/a&gt;&lt;/sup&gt; a plugin I wrote, &lt;a href=&#34;https://github.com/wbthomason/buildit.nvim&#34;&gt;buildit.nvim&lt;/a&gt;
-to compile my Markdown into PDF form using a Makefile. While &lt;code&gt;vim-pandoc&lt;/code&gt; can asynchronously run the
-Pandoc program, I find it easier to type the options I want to pass just once into a Makefile and
-know that my collaborators can also easily build the text without having to type the exact same
-invocation.&lt;/p&gt;
-
-&lt;p&gt;For LaTeX, I am a big fan of &lt;a href=&#34;https://github.com/lervag/vimtex&#34;&gt;vimtex&lt;/a&gt;. &lt;code&gt;vimtex&lt;/code&gt; offers
-auto-compilation on every save, completion of citation and file names, text objects for LaTeX
-environments, commands, etc., better LaTeX syntax highlighting, and new mappings for working with
-LaTeX.&lt;/p&gt;
-
-&lt;h3 id=&#34;focus-plugins&#34;&gt;Focus Plugins&lt;/h3&gt;
-
-&lt;p&gt;A focus plugin is a plugin designed to help you focus on what you&amp;rsquo;re writing. While working on a
-large document, it can be easy to become distracted by sections other than the one you&amp;rsquo;re currently
-writing, indicators of length or other metrics in the editor, and other extraneous information. The
-two focus plugins I use help to eliminate these distractions and let you pay attention to the
-writing at hand.&lt;/p&gt;
-
-&lt;p&gt;The first of these focus plugins is &lt;a href=&#34;https://github.com/junegunn/goyo.vim&#34;&gt;goyo.vim&lt;/a&gt;. &lt;code&gt;goyo&lt;/code&gt;
-essentially hides all the unnecessary parts of the editor while you&amp;rsquo;re writing: Line numbers, status
-displays, etc. It focuses the text in the center of the screen. While this functionality sounds
-simple, it&amp;rsquo;s surprisingly nice for writing.&lt;/p&gt;
-
-&lt;p&gt;My second focus plugin is &lt;a href=&#34;https://github.com/junegunn/limelight.vim&#34;&gt;limelight.vim&lt;/a&gt;. &lt;code&gt;limelight&lt;/code&gt;
-works very well with &lt;code&gt;goyo&lt;/code&gt;, as it brightens the color of the current paragraph of text, and dims
-everything else. In other words, everything but what you need to be focused on fades to the
-background.&lt;/p&gt;
-
-&lt;h3 id=&#34;edit-plugins&#34;&gt;Editing Plugins&lt;/h3&gt;
-
-&lt;p&gt;The final set of plugins I use for writing falls into the category of editing plugins. An editing
-plugin is one designed to help make your writing better &amp;mdash; things like grammar checks, word usage,
-and style issues.&lt;/p&gt;
-
-&lt;p&gt;For the first of these issues, I use &lt;a href=&#34;https://github.com/rhysd/vim-grammarous&#34;&gt;vim-grammarous&lt;/a&gt;.
-&lt;code&gt;vim-grammarous&lt;/code&gt;, as the name implies, checks your writing for grammar errors using
-&lt;a href=&#34;https://www.languagetool.org/&#34;&gt;LanguageTool&lt;/a&gt;. It can also use the suggested fixes from
-&lt;code&gt;LanguageTool&lt;/code&gt; to automatically edit your writing. It&amp;rsquo;s as simple as that, but very useful.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/dbmrq/vim-ditto&#34;&gt;vim-ditto&lt;/a&gt; helps to avoid using the same words ad nauseam in
-your writing&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ditto-pandoc&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ditto-pandoc&#34;&gt;13&lt;/a&gt;&lt;/sup&gt;. If it detects that you&amp;rsquo;ve used the same word too many times too close
-to one another (ignoring, of course, very common words), it will highlight the overused term in red.
-This plugin is another great example of a simple piece of functionality that can drastically improve
-your writing.&lt;/p&gt;
-
-&lt;p&gt;Finally, for more advanced checks of usage and style, I like
-&lt;a href=&#34;https://github.com/reedes/vim-wordy&#34;&gt;vim-wordy&lt;/a&gt;. While I&amp;rsquo;m a relatively new user of &lt;code&gt;vim-wordy&lt;/code&gt;
-myself, and thus still learning all it can do, it is a very powerful plugin for writers. It can
-check for things like weak and lazy words, redundant or problematic usage, weasel words, the passive
-voice, and much, much more. I typically run &lt;code&gt;vim-wordy&lt;/code&gt; once I&amp;rsquo;ve finished my first draft, to
-highlight areas in need of special editing attention.&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:vim&#34;&gt;Though Vim is definitely better&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:jokes&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:jokes&#34;&gt;14&lt;/a&gt;&lt;/sup&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:vim&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:editors&#34;&gt;Or another general purpose editor.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:editors&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:spacemacs&#34;&gt;&lt;a href=&#34;https://spacemacs.org&#34;&gt;Spacemacs&lt;/a&gt; is a particularly good option.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:spacemacs&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:terminal&#34;&gt;Which probably only matters if you are a computer scientist.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:terminal&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:vim8&#34;&gt;Vim 8 also added an asynchronous job API.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:vim8&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:lang&#34;&gt;Programming language or format, not natural language.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:lang&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:formats&#34;&gt;All of which are listed on &lt;a href=&#34;https://pandoc.org&#34;&gt;Pandoc&amp;rsquo;s website&lt;/a&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:formats&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:markdown&#34;&gt;A very simple language for structuring text, commonly used by Github and many other websites. See &lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34;&gt;here&lt;/a&gt; for more.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:markdown&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:latex-cite&#34;&gt;Found here: &lt;a href=&#34;https://www.latex-project.org/about/&#34;&gt;https://www.latex-project.org/about/&lt;/a&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:latex-cite&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:sharelatex&#34;&gt;For example, &lt;a href=&#34;https://www.sharelatex.com/learn&#34;&gt;these&lt;/a&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:sharelatex&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:unite-bibtex&#34;&gt;If you&amp;rsquo;re an Unite or Denite user, then &lt;a href=&#34;https://github.com/msprev/unite-bibtex&#34;&gt;unite-bibtex&lt;/a&gt; is a good thing to have.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:unite-bibtex&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:self-promo&#34;&gt;Warning: Shameless self-promotion here.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:self-promo&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:ditto-pandoc&#34;&gt;For instance, it&amp;rsquo;s going crazy on the word &amp;ldquo;Pandoc&amp;rdquo; in this piece.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ditto-pandoc&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:jokes&#34;&gt;Kidding, kidding. Any Emacs fans in the audience can put down their parenthetical pitchforks.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:jokes&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
