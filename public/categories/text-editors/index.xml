@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Text Editors on something bloglike</title>
+    <link>https://wbthomason.github.io/blog/categories/text-editors/</link>
+    <description>Recent content in Text Editors on something bloglike</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Jan 2018 12:31:53 -0500</lastBuildDate>
+    
+	<atom:link href="https://wbthomason.github.io/blog/categories/text-editors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Thoughts on Text Editor Design</title>
+      <link>https://wbthomason.github.io/blog/post/thoughts-editor-design/</link>
+      <pubDate>Wed, 10 Jan 2018 12:31:53 -0500</pubDate>
+      
+      <guid>https://wbthomason.github.io/blog/post/thoughts-editor-design/</guid>
+      <description>&lt;p&gt;This is a messy collection of thoughts about what a proper, modern text editor should be alongside
+some thoughts/planning for the implementation of such an editor. I pulled it straight from my
+personal notes, so it&amp;rsquo;s not cleaned up and was originally intended for my personal use. I&amp;rsquo;m putting
+it here so that I can more easily get some external opinions on it.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

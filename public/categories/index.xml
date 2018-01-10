@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on something bloglike</title>
+    <link>https://wbthomason.github.io/blog/categories/</link>
+    <description>Recent content in Categories on something bloglike</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://wbthomason.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Practices</title>
+      <link>https://wbthomason.github.io/blog/categories/practices/</link>
+      <pubDate>Wed, 22 Mar 2017 00:05:36 -0400</pubDate>
+      
+      <guid>https://wbthomason.github.io/blog/categories/practices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://wbthomason.github.io/blog/categories/programming/</link>
+      <pubDate>Wed, 10 Jan 2018 12:31:53 -0500</pubDate>
+      
+      <guid>https://wbthomason.github.io/blog/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Text Editors</title>
+      <link>https://wbthomason.github.io/blog/categories/text-editors/</link>
+      <pubDate>Wed, 10 Jan 2018 12:31:53 -0500</pubDate>
+      
+      <guid>https://wbthomason.github.io/blog/categories/text-editors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tooling</title>
+      <link>https://wbthomason.github.io/blog/categories/tooling/</link>
+      <pubDate>Wed, 10 Jan 2018 12:31:53 -0500</pubDate>
+      
+      <guid>https://wbthomason.github.io/blog/categories/tooling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Writing</title>
+      <link>https://wbthomason.github.io/blog/categories/writing/</link>
+      <pubDate>Wed, 22 Mar 2017 00:05:36 -0400</pubDate>
+      
+      <guid>https://wbthomason.github.io/blog/categories/writing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
