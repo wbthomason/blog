@@ -1,0 +1,32 @@
+$partial("templates/header.html")$
+
+<div class="posts">
+  $for(posts)$
+  <div class="post">
+    <h1 class="post-title"><a href="$url$">$title$</a></h1>
+    <div class="metadata">
+      <span class="post-date">$date$</span>
+    </div>
+    $if(teaser)$
+    <span class="post-summary">$teaser$</span>
+    <div class="read-more-link">
+      <a href="$url$">Read more »</a>
+    </div>
+    $else$
+    <span class="post-summary">$body$</span>
+    $endif$
+  </div>
+  $endfor$
+</div>
+
+<div class="pagination">
+  $if(nextPageNum)$
+  <a class="pagination-item older" href="$nextPageUrl$">◀ Older Entries</a>
+  $endif$
+
+  $if(previousPageNum)$
+  <a class="pagination-item newer" href="$previousPageUrl$">Newer Entries ▶</a>
+  $endif$
+</div>
+
+$partial("templates/footer.html")$
