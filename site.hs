@@ -90,7 +90,7 @@ github = "wbthomason"
 
 site_title = "something bloglike"
 
-base_url = "blog"
+base_url = ""
 
 linkedin = "wbthomason"
 
