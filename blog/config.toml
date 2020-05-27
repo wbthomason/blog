@@ -1,0 +1,13 @@
+title = "something bloglike"
+base_url = "https://wbthomason.github.io/blog"
+compile_sass = true
+highlight_code = true
+highlight_theme = "ir-white"
+build_search_index = true
+generate_feed = true
+taxonomies = [
+  { name = "tags" },
+  { name = "authors"}
+]
+
+[extra]
