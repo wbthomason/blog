@@ -1,10 +1,16 @@
 {% extends "base.html" %} {% block content %}
-<h1 class="title">
-  {{ section.title }}
-</h1>
-<ul>
+<ul class="post-list">
   {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+  <li class="post-item">
+      <h4 class="post-date">{{ page.date }}</h4>
+      <a class="post-link" href="{{ page.permalink | safe }}"><h1>{{ page.title }}</h1></a>
+    {% if page.summary %}
+    <div class="post-summary">
+      {{ page.summary | replace(from="h3", to="h4") | replace(from="h2", to="h3") | replace(from="h1", to="h2") | safe}}
+    </div>
+    <a class="read-more" href="{{ page.permalink }}#continue-reading">continue</a>
+    {% endif %}
+  </li>
   {% endfor %}
 </ul>
 {% endblock content %}
