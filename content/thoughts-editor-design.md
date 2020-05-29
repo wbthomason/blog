@@ -1,24 +1,15 @@
----
-title: "Thoughts on Text Editor Design"
-date: 2018-01-10T12:31:53-05:00
-draft: false
-tags:
-  - programming
-  - editors
-  - data structures
-  - side project
-categories:
-  - Tooling
-  - Text Editors
-  - Programming
----
++++
+title = "Thoughts on Text Editor Design"
+date = 2018-01-10T12:31:53-05:00
+draft = true
++++
 
 This is a messy collection of thoughts about what a proper, modern text editor should be alongside
 some thoughts/planning for the implementation of such an editor. I pulled it straight from my
 personal notes, so it's not cleaned up and was originally intended for my personal use. I'm putting
 it here so that I can more easily get some external opinions on it.
 
-<!--more-->
+<!-- more -->
 
 Note that by "Vim" I usually actually mean "Neovim" or "both Vim and Neovim".
 
