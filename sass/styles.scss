@@ -140,6 +140,7 @@ a:hover {
 footer > nav {
   font-family: $font-family-sans-serif;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
   line-height: 1.5 * $base-line-height;
@@ -147,12 +148,11 @@ footer > nav {
   padding-bottom: 1rem;
   font-size: 0.75rem;
   margin: auto;
-  width: 75%
+  width: 45%
 }
 
 footer {
   position: absolute;
-  // bottom: 0;
   height: 2.5rem;
   width: 100%;
   display: flex;
