@@ -1,8 +1,10 @@
-+++
-date = 2017-03-22T00:05:36-04:00
-draft = true
-title = "Using Vim for Academic Writing"
-+++
+---
+date: 2017-03-22
+draft: true
+title: "Using Vim for Academic Writing"
+author: Wil Thomason
+tags: [neovim, academia, practices, tools]
+---
 
 Writing is arguably the most important activity for an academic. An academic's job is to create and
 disseminate knowledge, and this cannot be done without effective writing. Thus, it is important to 
@@ -11,10 +13,10 @@ pick the right tools for the job. These tools are split into the categories of [
 academic writing workflow with Neovim, Pandoc and LaTeX, and a curated set of plugins for
 writing tasks.
 
-<!-- more -->
-
 If you already use my combination of Neovim, Pandoc, and LaTeX, you'll probably want to skip ahead 
 to [the last section](#plugins).
+
+<!-- more -->
 
 ## Writing with Neovim {#vim}
 

@@ -1,0 +1,14 @@
+    <ul class="post-list">
+      {{#posts}}
+      <li class="post-item">
+          <h4 class="post-date">{{&prettyDate}}</h4>
+          <a class="post-link" href="/{{url}}"><h1>{{title}}</h1></a>
+          {{#teaser}}
+        <div class="post-summary">
+          {{&teaser}}
+        </div>
+        <a class="read-more" href="{{url}}#continue-reading">continue</a>
+        {{/teaser}}
+      </li>
+      {{/posts}}
+    </ul>
