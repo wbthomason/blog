@@ -19,6 +19,7 @@ import           Data.Text.Internal.Search     as TS
 import           Data.Time                     as TM
 import           Development.Shake
 import           Text.Pandoc
+import           Text.Pandoc.Filter
 import           Text.Pandoc.Highlighting
 import           Development.Shake.Classes
 import           Development.Shake.FilePath
@@ -29,6 +30,7 @@ import           System.Directory
 import           Slick.Pandoc
 
 import qualified Data.HashMap.Lazy             as HML
+import qualified Data.HashMap.Strict           as HM
 import qualified Data.Text                     as T
 import           Data.List                      ( sortBy )
 import           Data.Function                  ( on )
@@ -36,15 +38,26 @@ import           Data.Text.Lens                 ( unpacked )
 
 ---Config-----------------------------------------------------------------------
 
+extensions :: Extensions
+extensions = pandocExtensions <> extensionsFromList
+  [ Ext_auto_identifiers
+  , Ext_gfm_auto_identifiers
+  , Ext_ascii_identifiers
+  , Ext_tex_math_single_backslash
+  ]
+
 markdownOptions :: ReaderOptions
-markdownOptions = def { readerExtensions = pandocExtensions }
+markdownOptions = def { readerExtensions = extensions }
 
 html5Options :: WriterOptions
-html5Options = def { writerHighlightStyle = Just zenburn,
-                   writerExtensions = writerExtensions def,
-                   writerHTMLMathMethod = KaTeX "",
-                   writerCiteMethod = Citeproc,
-                   writerWrapText = WrapPreserve }
+html5Options = def { writerHighlightStyle   = Just kate
+                   , writerExtensions       = extensions
+                   , writerHTMLMathMethod   = MathJax ""
+                   , writerCiteMethod       = Citeproc
+                   , writerWrapText         = WrapPreserve
+                   , writerTopLevelDivision = TopLevelSection
+                   , writerSectionDivs      = True
+                   }
 
 siteMeta :: SiteMeta
 siteMeta = SiteMeta { siteAuthor    = "Wil Thomason"
@@ -141,6 +154,38 @@ data AtomData =
            , currentTime  :: String
            , atomUrl      :: String } deriving (Generic, ToJSON, Eq, Ord, Show)
 
+-- | Pandoc conversion with pandoc-citeproc and pandoc-sidenote filters
+filters :: [Filter]
+filters = [JSONFilter "pandoc-citeproc", JSONFilter "pandoc-sidenote"]
+
+-- | Handle possible pandoc failure within the Action Monad
+unPandocM :: PandocIO a -> Action a
+unPandocM p = do
+  result <- liftIO $ runIO p
+  either (fail . show) return result
+
+loadUsingFilters
+  :: PandocReader t -> PandocWriter -> ReaderOptions -> t -> Action Value
+loadUsingFilters reader writer ropts txt = do
+  pdoc@(Pandoc meta _) <-
+    unPandocM $ reader txt >>= applyFilters ropts filters []
+  meta'       <- flattenMeta writer meta
+  outText     <- unPandocM $ writer pdoc
+  withContent <- case meta' of
+    Object m -> return . Object $ HM.insert "content" (String outText) m
+    _        -> fail "Failed to parse metadata"
+  return withContent
+
+markdownToHTMLWithOptsAndFilters
+  :: ReaderOptions -> WriterOptions -> Text -> Action Value
+markdownToHTMLWithOptsAndFilters ropts wopts txt = loadUsingFilters reader
+                                                                    writer
+                                                                    ropts
+                                                                    txt
+ where
+  reader = readMarkdown ropts
+  writer = writeHtml5String wopts
+
 -- | given a list of posts this will build a table of contents
 buildIndex :: [Post] -> Action ()
 buildIndex posts' = do
@@ -182,7 +227,7 @@ buildPost srcPath = cacheAction ("build" :: T.Text, srcPath) $ do
   liftIO . putStrLn $ "Rebuilding post: " <> srcPath
   postContent <- readFile' srcPath
   postData    <-
-    markdownToHTMLWithOpts markdownOptions html5Options
+    markdownToHTMLWithOptsAndFilters markdownOptions html5Options
     . T.pack
     $ postContent
   let postTeaser     = getPostTeaser $ postData ^. key "content" . _String
@@ -193,9 +238,15 @@ buildPost srcPath = cacheAction ("build" :: T.Text, srcPath) $ do
   let postUrl =
         T.pack ((dropExtension . dropDirectory1 $ srcPath) </> "index.html")
       withPostUrl = _Object . at "url" ?~ String postUrl
-  let prettyDate = prettyFormatDate $ postData ^. key "date" . _String . unpacked
+  let prettyDate =
+        prettyFormatDate $ postData ^. key "date" . _String . unpacked
       withPrettyDate = _Object . at "prettyDate" ?~ String (T.pack prettyDate)
-  let fullPostData = withPrettyDate . withPostTeaser . withSiteMeta . withPostUrl $ teaserPostData
+  let fullPostData =
+        withPrettyDate
+          . withPostTeaser
+          . withSiteMeta
+          . withPostUrl
+          $ teaserPostData
   template <- compileTemplate' "templates/post.html"
   writeFile' (outputFolder </> T.unpack postUrl) . T.unpack $ substitute
     template

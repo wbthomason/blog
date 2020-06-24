@@ -28,7 +28,7 @@ executables:
     - text
     - containers
     - unordered-containers
-    - pandoc
+    - pandoc >= 2.9
     - lens
     - aeson
     - lens-aeson

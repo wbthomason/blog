@@ -35,7 +35,7 @@ executable build-site
     , directory
     , lens
     , lens-aeson
-    , pandoc
+    , pandoc >=2.9
     , shake
     , slick
     , text

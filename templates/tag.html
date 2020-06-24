@@ -4,13 +4,13 @@
     {{>templates/head.html}}
   </head>
   <body>
-    <section class="section">
-      <div class="container">
-        {{>templates/header.html}}
-        <h1 class="tag-title">Posts tagged "{{tag}}":</h1>
-        {{>templates/post-list.html}}
-      </div>
+    <section class="header">
+      {{>templates/header.html}}
     </section>
+    <article class="container">
+      <h1 class="tag-title">Posts tagged "{{tag}}":</h1>
+      {{>templates/post-list.html}}
+    </article>
     {{>templates/footer.html}}
   </body>
 </html>

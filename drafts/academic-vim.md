@@ -3,6 +3,9 @@ date: 2017-03-22
 draft: true
 title: "Using Vim for Academic Writing"
 author: Wil Thomason
+bibliography: "/home/wil/gdrive/notes/references.bib"
+link-citations: true
+reference-section-title: "References"
 tags: [neovim, academia, practices, tools]
 ---
 
@@ -18,8 +21,21 @@ to [the last section](#plugins).
 
 <!-- more -->
 
-## Writing with Neovim {#vim}
+# Writing with Neovim {#vim}
 
+\\[\\alpha = 5\\]
+
+\(test = \sin(3)\)
+``` {.lua .numberSource}
+function bar(foo, bax, ...)
+  print('Hello', foo)
+  select('#', ...)
+  local baz = bax + 19.4
+  return
+end
+```
+
+Testing references @crane_discrete_differential
 In the programmer community, the "Emacs or Vim" debate is an unending flame war. I have no intent of 
 entering this debate[^vim]. Use whichever editor works for you; Vim (specifically 
 [Neovim](https://neovim.io)) works for me. However --- particularly in computer science --- there 
@@ -51,7 +67,7 @@ an asynchronous job API[^vim8], cleans up the Vim source code, and offers greate
 maintainability with no regressions from Vim's functionality, it is the best choice of Vim-family 
 editors.
 
-## Pandoc Markdown and LaTeX {#pandoc-and-latex}
+# Pandoc Markdown and LaTeX {#pandoc-and-latex}
 
 Regardless of the editor you choose, it is important to give thought to the right language[^lang] to 
 use for writing. There are many options --- popular ones include plain text, Markdown of various 
@@ -95,7 +111,7 @@ Thus, by starting your writing in Markdown and ending with LaTeX, you get a nice
 use for the 80% of the work that doesn't require tremendous power, and all the typesetting power you
 could want for the remaining 20%.
 
-## Support Tools {#plugins}
+# Support Tools {#plugins}
 
 The final piece pulling together the elements of my academic writing setup is a curated set of 
 writing plugins for Neovim. These fall loosely into three categories: [language 
@@ -103,7 +119,7 @@ plugins](#lang-plugins), [focus plugins](#focus-plugins), and [editing plugins](
 use many plugins other than these; you can see the full set in my [dotfiles 
 repo](https://github.com/wbthomason/.dotfiles).
 
-### Language Plugins {#lang-plugins}
+# Language Plugins {#lang-plugins}
 
 Language plugins are plugins which add support to Neovim for new languages. While Neovim offers 
 basic syntax highlighting support for many languages out of the box, there's a lot more that these 
@@ -137,7 +153,7 @@ LaTeX.
 
 [^unite-bibtex]: If you're an Unite or Denite user, then [unite-bibtex](https://github.com/msprev/unite-bibtex) is a good thing to have.
 
-### Focus Plugins {#focus-plugins}
+# Focus Plugins {#focus-plugins}
 
 A focus plugin is a plugin designed to help you focus on what you're writing. While working on a 
 large document, it can be easy to become distracted by sections other than the one you're currently 
@@ -155,7 +171,7 @@ works very well with `goyo`, as it brightens the color of the current paragraph 
 everything else. In other words, everything but what you need to be focused on fades to the 
 background.
 
-### Editing Plugins {#edit-plugins}
+# Editing Plugins {#edit-plugins}
 
 The final set of plugins I use for writing falls into the category of editing plugins. An editing 
 plugin is one designed to help make your writing better --- things like grammar checks, word usage, 
