@@ -187,6 +187,12 @@ ul.post-list {
   width: 55%;
 }
 
+ul.tag-post-list {
+  list-style: none;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+
 .post-item {
   display: grid;
   width: 100%;
@@ -252,12 +258,33 @@ a.read-more {
   align-items: center;
 }
 
-.post-subtitle > strong {
+.post-metadata > strong {
   color: $light-grey;
 }
 
 .post-date {
   padding-bottom: 0.5rem;
+}
+
+.post-metadata-bullet {
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.post-rt {
+  padding-bottom: 0.5rem;
+}
+
+.post-wc {
+  padding-bottom: 0.5rem;
+}
+
+.post-subtitle > .post-metadata {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .tag-title {
@@ -688,7 +715,7 @@ p {
   vertical-align: baseline;
 }
 
-article > p {
+article > p, ul {
   width: 55%;
 }
 
@@ -849,6 +876,26 @@ label.margin-toggle:not(.sidenote-number) {
 
 .footnotes, .footnotes p, .footnotes li {
   font-size: 1.0rem;
+}
+
+.footnote-definition {
+  font-size: 1.0rem;
+  width: 55%;
+  display: flex;
+  align-items: top;
+  padding-bottom: 1rem;
+}
+
+.footnote-definition-label {
+  margin-right: 0.5rem;
+  padding: 0;
+}
+
+.footnote-definition > p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /* For smart quotes */
