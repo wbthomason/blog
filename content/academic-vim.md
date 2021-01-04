@@ -1,13 +1,15 @@
----
-date: 2017-03-22
-draft: true
-title: "Using Vim for Academic Writing"
-author: Wil Thomason
-bibliography: "/home/wil/gdrive/notes/references.bib"
-link-citations: true
-reference-section-title: "References"
-tags: [neovim, academia, practices, tools]
----
++++
+date = 2017-03-22
+draft = false
+title = "Using Vim for Academic Writing"
+author = "Wil Thomason"
+bibliography = "/home/wil/gdrive/notes/references.bib"
+link-citations = true
+reference-section-title = "References"
+
+[taxonomies]
+tags = ["neovim", "academia", "practices", "tools"]
++++
 
 Writing is arguably the most important activity for an academic. An academic's job is to create and
 disseminate knowledge, and this cannot be done without effective writing. Thus, it is important to 
@@ -23,19 +25,6 @@ to [the last section](#plugins).
 
 # Writing with Neovim {#vim}
 
-\\[\\alpha = 5\\]
-
-\(test = \sin(3)\)
-``` {.lua .numberSource}
-function bar(foo, bax, ...)
-  print('Hello', foo)
-  select('#', ...)
-  local baz = bax + 19.4
-  return
-end
-```
-
-Testing references @crane_discrete_differential
 In the programmer community, the "Emacs or Vim" debate is an unending flame war. I have no intent of 
 entering this debate[^vim]. Use whichever editor works for you; Vim (specifically 
 [Neovim](https://neovim.io)) works for me. However --- particularly in computer science --- there 
@@ -149,10 +138,6 @@ auto-compilation on every save, completion of citation and file names, text obje
 environments, commands, etc., better LaTeX syntax highlighting, and new mappings for working with 
 LaTeX.
 
-[^self-promo]: Warning: Shameless self-promotion here.
-
-[^unite-bibtex]: If you're an Unite or Denite user, then [unite-bibtex](https://github.com/msprev/unite-bibtex) is a good thing to have.
-
 # Focus Plugins {#focus-plugins}
 
 A focus plugin is a plugin designed to help you focus on what you're writing. While working on a 
@@ -195,9 +180,9 @@ check for things like weak and lazy words, redundant or problematic usage, wease
 voice, and much, much more. I typically run `vim-wordy` once I've finished my first draft, to 
 highlight areas in need of special editing attention.
 
-[^vim]: Though Vim is definitely better[^jokes].
+# Notes
 
-[^jokes]: Kidding, kidding. Any Emacs fans in the audience can put down their parenthetical pitchforks.
+[^vim]: Though Vim is definitely better[^jokes].
 
 [^editors]: Or another general purpose editor.
 
@@ -217,4 +202,10 @@ highlight areas in need of special editing attention.
 
 [^sharelatex]: For example, [these](https://www.sharelatex.com/learn).
 
+[^unite-bibtex]: If you're an Unite or Denite user, then [unite-bibtex](https://github.com/msprev/unite-bibtex) is a good thing to have.
+
+[^self-promo]: Warning: Shameless self-promotion here.
+
 [^ditto-pandoc]: For instance, it's going crazy on the word "Pandoc" in this piece.
+
+[^jokes]: Kidding, kidding. Any Emacs fans in the audience can put down their parenthetical pitchforks.

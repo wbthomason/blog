@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="container">
+  <div class="post-header">
+    <h1 class="post-title">
+      {{ page.title }}
+    </h1>
+    <div class="post-subtitle">
+      <div class="post-metadata">
+      <strong class="post-date">{{ page.date | date(format="%d %B %Y") }}</strong>
+      <div class="post-metadata-bullet">&#8226</div>
+      <strong class="post-wc">{{page.word_count}} words</strong>
+      <div class="post-metadata-bullet">&#8226</div>
+      <strong class="post-rt">{{page.reading_time}} minutes</strong>
+      </div>
+      <br>
+      {% if page.taxonomies.tags %}
+      <span class ="post-tags">
+        {% for t in page.taxonomies.tags %}
+        <a class="post-tag" href="{{ get_taxonomy_url(kind="tags", name=t) | safe }}">#{{ t }}</a>
+        {% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </div>
+  {{ page.content | safe }}
+</article>
+{% endblock content %}

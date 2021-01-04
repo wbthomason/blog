@@ -1,14 +1,16 @@
-    <ul class="post-list">
-      {{#posts}}
-      <li class="post-item">
-          <h4 class="post-date">{{&prettyDate}}</h4>
-          <a class="post-link" href="/{{url}}"><h1>{{title}}</h1></a>
-          {{#teaser}}
-        <div class="post-summary">
-          {{&teaser}}
-        </div>
-        <a class="read-more" href="{{url}}#continue-reading">continue</a>
-        {{/teaser}}
-      </li>
-      {{/posts}}
-    </ul>
+<ul class="post-list">
+  {% for post in section.pages %}
+  {% if not post.draft %}
+  <li class="post-item">
+    <h4 class="post-date">{{ post.date | date(format="%d %B %Y")}}</h4>
+    <a class="post-link" href="{{ post.permalink | safe }}"><h1>{{ post.title }}</h1></a>
+    {% if post.summary %}
+    <div class="post-summary">
+      {{ post.summary | safe }}
+    </div>
+    <a class="read-more" href="{{ post.permalink | safe }}#continue-reading">continue</a>
+    {% endif %}
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>

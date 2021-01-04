@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {{>templates/head.html}}
-  </head>
-  <body>
-    <section class="header">
-        {{>templates/header.html}}
-    </section>
-    <article class="container">
-        {{>templates/post-list.html}}
-    </article>
-    {{>templates/footer.html}}
-  </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<article class="container">
+  {% include "post-list.html" %}
+</article>
+{% endblock content %}
