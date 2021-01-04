@@ -2,7 +2,7 @@
   {% for post in section.pages %}
   {% if not post.draft %}
   <li class="post-item">
-    <h4 class="post-date">{{ post.date | date(format="%d %B %Y")}}</h4>
+    <h4 class="post-date">{{ post.date | date(format="%d %b %Y")}}</h4>
     <a class="post-link" href="{{ post.permalink | safe }}"><h1>{{ post.title }}</h1></a>
     {% if post.summary %}
     <div class="post-summary">
